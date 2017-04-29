@@ -1,0 +1,62 @@
+//color
+$primary-color: #FFEC50;
+
+$yellow: #FFEC50;
+$white: #fff;
+$gray: #666;
+$dark-gray: #4D4D4D;
+$light-gray: #F5F5F5;
+$black: #111; 
+$gray-green: #438894;
+$dark-gray-green: #4f7177;
+
+//font style
+$xxs-font: .75em;
+$xs-font: .8em;
+$s-font: .9em;
+$m-font: 1em;
+$l-font: 1.125em;
+$xl-font: 1.25em;
+$xxl-font: 1.5em;
+$xxxl-font: 1.75em;
+$xxxxl-font: 2em;
+$xxxxxl-font: 2.5em;
+$xxxxxxl-font: 3em;
+
+@mixin full-screen {
+//	height: 100%;
+	min-height: 100%;
+	width: 100%;
+}
+@mixin clearfix {
+	&:after, &:before {
+		content: "";
+		display: table;
+	}
+	&:after{
+		clear:both;
+	}
+	*zoom:1;
+}
+@mixin selection {
+    ::-moz-selection { @content; }
+    ::selection { @content; }
+}
+@mixin transparent($color, $alpha) {
+	$rgba: rgba($color, $alpha);
+	$ie-hex-str: ie-hex-str($rgba);
+	background-color: transparent;
+	background-color: $rgba;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+	zoom: 1;
+}
+@mixin info-font {
+	font-size: $s-font;
+	line-height: $l-font;
+}
+@mixin inline-block {
+	display: -moz-inline-stack;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}

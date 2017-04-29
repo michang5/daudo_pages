@@ -1,0 +1,88 @@
+$xxs: 320px;
+$xs: 480px;
+$sm: 768px;
+$md: 991px;
+$lg: 1200px;
+
+@mixin respond-to($media) {
+	@if $media == xxs-mobile {
+		@media only screen and (max-width: $xxs) { 
+			@content;
+		}
+	}
+	@else if $media == xs-mobile {
+		@media only screen and (min-width: $xxs + 1) and (max-width: $xs) { 
+			@content;
+		}
+	}
+	@else if $media == tablet {
+		@media only screen and (min-width: $xs + 1 ) and (max-width: $sm) { 
+			@content;
+		}
+	}
+
+	@else if $media == md-screen {
+		@media only screen and (min-width: $sm + 1) and (max-width: $md) { 
+			@content;
+		}
+	}
+	@else if $media == lg-screen {
+		@media only screen and (min-width: $md + 1) and (max-width: $lg) { 
+			@content;
+		}
+	}
+	@else if $media == xlg-screen {
+		@media only screen and (min-width: $lg) { 
+			@content;
+		}
+	}
+	///
+	@else if $media == tablet-landscape {
+		@media only screen and (max-width: $md) { 
+			@content;
+		}
+	}
+	@else if $media == normal-mobile {
+		@media only screen and (max-width: $xs) { 
+			@content;
+		}
+	}
+	@else if $media == only-mobile {
+		@media only screen and (max-width: $sm - 1) { 
+			@content;
+		}
+	}
+	@else if $media == only-device {
+		@media only screen and (max-width: $sm) { 
+			@content;
+		}
+	}
+	@else if $media == only-desktop {
+		@media only screen and (min-width: $sm + 1) { 
+			@content;
+		}
+	}
+}
+
+@mixin retina {
+	@media
+		only screen and (-webkit-min-device-pixel-ratio: 2),
+		only screen and (min--moz-device-pixel-ratio: 2),
+		only screen and (-o-min-device-pixel-ratio: 2/1),
+		only screen and (min-device-pixel-ratio: 2),
+		only screen and (min-resolution: 192dpi),
+		only screen and (min-resolution: 2dppx) {
+			@content;
+	}
+}
+@mixin image-2x($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
