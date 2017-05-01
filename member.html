@@ -32,7 +32,7 @@
 	<![endif]-->
 
 </head>
-<body>
+<body id="member">
 	<div id="member-section">
 		<div class="container">
 			<h2>我的帳戶</h2>
@@ -40,13 +40,14 @@
 				<div id="member-info" class="col-sm-4 col-sm-offset-1">
 					<h4>帳號基本資料</h4>
 					<div class="form-group">
-						<label>帳號 Email</label>
+						<label>帳號 Email</label><span class="link">修改 Email</span>
 						<input type="text" class="form-control" id="usr" placeholder="mi@mz.run">
 					</div>
 					<div class="form-group">
-						<label>密碼</label>
+						<label>密碼</label><span class="link">修改密碼</span>
 						<input type="password" class="form-control" id="pwd" placeholder="************">
 					</div>
+<!--
 					<div class="form-group">
 						<label>再次確認密碼</label>
 						<input type="password" class="form-control" id="pwd-again" placeholder="************">
@@ -54,9 +55,11 @@
 					<div class="form-group">
 						<button type="button" class="btn btn-primary btn-lg" id="modify-btn">確認修改</button>
 					</div>
+-->
 				</div>
 				<div id="card-info" class="col-sm-5 col-sm-offset-1">
 					<h4>信用卡資訊</h4>
+<!--
 					<button type="button" class="btn btn-defult btn-lg" data-toggle="collapse" data-target="#add-creditcard">新增信用卡資訊</button>
 
 					<div id="add-creditcard" class="collapse add-creditcard">
@@ -90,6 +93,7 @@
 							<button type="button" class="btn btn-primary btn-lg" id="modify-btn">確認修改</button>
 						</div>
 					</div>
+-->
 					<div id="creditcard-info">
 						<p>扣款信用卡別：VISA</p>
 						<p>信用卡末四碼：**** **** **** 1234</p>
@@ -131,32 +135,40 @@
 			<div class="row">
 				<div id="current-plan" class="col-sm-10 col-sm-offset-1">
 					<h4>目前方案</h4>
-					<p>半年付 899 元 <span>變更方案</span></p>
-					<div class="radio">
-						<input type="radio" name="radio" id="plan-1" class="radio_input" checked>
-						<label for="plan-1" class="radio_label">半年付 899 元</label>
+					<p>半年付 899 元 <span class="link" data-toggle="collapse" data-target="#change-plan">變更方案</span></p>
+					<div id="change-plan" class="collapse">
+					    <div class="radio">
+                            <input type="radio" name="radio" id="plan-1" class="radio_input" checked>
+                            <label for="plan-1" class="radio_label">半年付 899 元</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" name="radio" id="plan-2" class="radio_input">
+                            <label for="plan-2" class="radio_label">年付 1,699 元</label>
+                        </div>
+					    <div class="form-group">
+                            <button type="button" class="btn btn-primary btn-lg col-sm-4" id="modify-btn">確認修改</button>
+                            <p class="note inline">您變更的方案，將於之前方案款項到期日生效</p>
+                        </div>
 					</div>
-					<div class="radio">
-						<input type="radio" name="radio" id="plan-2" class="radio_input">
-						<label for="plan-2" class="radio_label">年付 1,699 元</label>
-					</div>
-				</div>
-				<div class="col-sm-4 col-sm-offset-1">
-					<div class="form-group">
-						<button type="button" class="btn btn-primary btn-lg col-sm-4" id="modify-btn">確認修改</button>
-						<p class="note inline">您變更的方案，將於之前方案款項到期日生效</p>
-					</div>
-				</div>
 					
-					
+                </div>
 			</div>
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1">
 					<div id="auto-payment">
 						<div class="form-group">
-							<p>下次扣款日為：2018/12/12</p>
-							<button type="button" class="btn btn-defult btn-md" id="modify-btn">取消自動扣款</button>
-							<p class="note">如選擇取消，您仍將保持會員資格直到款項到期日</p>
+							<p>款項到期日：2018/12/12</p>
+							<div class="row">
+                                <div class="col-xs-6">
+                                    <button type="button" class="btn btn-defult btn-md" id="modify-btn">取消自動扣款</button>
+                                    <p class="note">如選擇取消，您仍將保持會員資格直到款項到期日</p>
+                                </div>
+							    <div class="col-xs-6">
+                                   <button type="button" class="btn btn-defult btn-md" id="modify-btn">停止訂閱</button>
+                                    <p class="note">如選擇停止訂閱，我們將依照訂閱期剩餘天數計算退費金額。（首次購買者 30 天內保證無條件全額退費）</p>
+                                </div>
+							</div>
+							
 						</div>
 					</div>
 				</div>

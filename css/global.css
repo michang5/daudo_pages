@@ -21,7 +21,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.75;
-  margin-top: 10px;
+  margin-top: 0;
   margin-bottom: 10px;
   font-weight: bold;
   font-family: 'Roboto', "source-han-sans-traditional", sans-serif, "Microsoft JhengHei";
@@ -39,6 +39,73 @@ h1, h2, h3, h4, h5, h6 {
   -o-transition: color, 0.5s, ease-in;
   -webkit-transition: color, 0.5s, ease-in;
   transition: color, 0.5s, ease-in;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 32px;
+  color: #438894;
+}
+h3 span {
+  background-image: -webkit-linear-gradient(rgba(255, 236, 80, 0) 64%, #FFEC50 65%);
+  background-image: -o-linear-gradient(rgba(255, 236, 80, 0) 64%, #FFEC50 65%);
+  background-image: linear-gradient(rgba(255, 236, 80, 0) 64%, #ffec50 65%);
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #4f7177;
+}
+
+h5 {
+  font-size: 20px;
+  color: #666;
+}
+
+hr#page {
+  display: block;
+  border: 1px;
+  height: 64px;
+  margin: -60px 0 40px;
+  background: url(../images/line_page.png) no-repeat top center;
+}
+
+.morning {
+  width: 80%;
+  box-shadow: inset 2px 0 0 #CCCCCC;
+  margin: 0 auto;
+  padding: 0 30px;
+  border-left: 8px solid #FFEC50;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.carousel {
+  width: 65%;
+  margin: 0 auto;
+}
+.carousel .item {
+  text-align: center;
+}
+.carousel p {
+  font-size: 18px;
+}
+.carousel p.reader {
+  padding-left: 20px;
+  font-size: 15px;
+  color: #666;
+}
+.carousel p.reader:before {
+  content: "─";
+  padding-right: 8px;
 }
 
 input[type='text'], input[type='password'] {
@@ -91,7 +158,7 @@ p {
   font-weight: normal;
   margin-bottom: 0;
   color: #4D4D4D;
-  margin: 0 0 10px;
+  margin: 0 0 20px;
 }
 
 a {
@@ -103,6 +170,7 @@ a {
 }
 a:hover, a:focus {
   text-decoration: none;
+  background: #FFEC50;
 }
 
 .clearfix {
@@ -181,6 +249,13 @@ blockquote p:after {
   margin: 4px 0;
 }
 
+.link {
+  text-decoration: underline;
+  color: #4f7177;
+  cursor: pointer;
+  font-weight: bold;
+}
+
 #section-1 h2 {
   margin-bottom: 30px;
 }
@@ -188,13 +263,6 @@ blockquote p:after {
 #member-section, #section-1, #section-2, #section-3, #section-4, #section-5, #section-6, #section-7 {
   padding-bottom: 60px;
   padding-top: 80px;
-}
-#member-section hr, #section-1 hr, #section-2 hr, #section-3 hr, #section-4 hr, #section-5 hr, #section-6 hr, #section-7 hr {
-  display: block;
-  border: 1px;
-  height: 64px;
-  margin: -60px 0 40px;
-  background: url(../images/line_page.png) no-repeat top center;
 }
 #member-section h2, #section-1 h2, #section-2 h2, #section-3 h2, #section-4 h2, #section-5 h2, #section-6 h2, #section-7 h2 {
   font-size: 40px;
@@ -237,25 +305,6 @@ blockquote p:after {
 #section-2 {
   padding-top: 0;
   padding-bottom: 50px;
-}
-#section-2 .carousel {
-  width: 65%;
-  margin: 0 auto;
-}
-#section-2 .carousel .item {
-  text-align: center;
-}
-#section-2 .carousel p {
-  font-size: 18px;
-}
-#section-2 .carousel p.reader {
-  padding-left: 20px;
-  font-size: 15px;
-  color: #666;
-}
-#section-2 .carousel p.reader:before {
-  content: "─";
-  padding-right: 8px;
 }
 #section-2 blockquote:before {
   top: 8px;
@@ -578,6 +627,12 @@ blockquote p:after {
 }
 #member-section .note.noteclick {
   text-decoration: underline;
+}
+#member-section #member-info .link {
+  float: right;
+  font-weight: normal;
+  font-size: 14px;
+  margin-top: 6px;
 }
 #member-section .tab-container {
   padding: 10px;
