@@ -15,7 +15,7 @@ body {
   font-family: 'Roboto', "source-han-sans-traditional", sans-serif, "Microsoft JhengHei";
   word-wrap: break-word;
   word-break: normal;
-  line-height: 1.5;
+  line-height: 1.8;
   overflow-x: hidden;
 }
 
@@ -70,11 +70,11 @@ h5 {
   color: #666;
 }
 
-hr#page {
+hr.page {
   display: block;
   border: 1px;
   height: 64px;
-  margin: -60px 0 40px;
+  margin: 40px 0;
   background: url(../images/line_page.png) no-repeat top center;
 }
 
@@ -88,9 +88,27 @@ hr#page {
   font-weight: normal;
 }
 
+.carousel-indicators {
+  bottom: 80px;
+}
+.carousel-indicators .active {
+  background-color: #666;
+}
+.carousel-indicators li {
+  border-color: #666;
+  background-color: #FFEC50;
+  border-width: 2px;
+}
+
+@media only screen and (max-width: 768px) {
+  .carousel {
+    width: 100%;
+  }
+}
 .carousel {
   width: 65%;
   margin: 0 auto;
+  padding-bottom: 100px;
 }
 .carousel .item {
   text-align: center;
@@ -123,16 +141,16 @@ input[type='text'], input[type='password'] {
   background-color: #fff;
   border: 1px solid #438894;
   color: #4f7177;
+  margin: 10px;
 }
 
 .btn-primary {
   background-color: #4f7177;
   clear: both;
   border: 0;
+  margin: 10px;
   color: #FFEC50;
-  margin: 0 auto;
   display: block;
-  width: 300px;
 }
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary.active, .btn-primary.dropdown-toggle, .btn-primary.disabled {
   border: 0;
@@ -153,12 +171,29 @@ input[type='text'], input[type='password'] {
   background-color: #4D4D4D;
 }
 
+.item_number, .item_disc {
+  margin: 20px auto;
+  padding: 5px 20px;
+}
+.item_number li, .item_disc li {
+  list-style-type: decimal;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.item_disc li {
+  list-style-type: disc;
+}
+
 p {
   font-size: 16px;
   font-weight: normal;
   margin-bottom: 0;
   color: #4D4D4D;
   margin: 0 0 20px;
+}
+p a:hover, p a:focus {
+  background: #FFEC50;
 }
 
 a {
@@ -170,7 +205,6 @@ a {
 }
 a:hover, a:focus {
   text-decoration: none;
-  background: #FFEC50;
 }
 
 .clearfix {
@@ -205,6 +239,7 @@ blockquote {
   padding-left: 100px;
   position: relative;
   border: 0;
+  font-size: 16px;
 }
 
 blockquote p {
@@ -237,6 +272,31 @@ blockquote p:after {
     top: -20px;
   }
 }
+.alert-dismissable .close, .alert-dismissible .close {
+  top: 4px;
+}
+
+.alert {
+  font-size: 16px;
+  border: 0;
+  box-shadow: 0 2px 0 #FFEC50;
+}
+.alert .close {
+  opacity: .8;
+}
+.alert .close:hover, .alert .close:focus {
+  opacity: 1;
+  color: #fff;
+}
+.alert.alert-success {
+  background: #438894;
+  color: #fff;
+}
+.alert.alert-info {
+  background: #666;
+  color: #FFEC50;
+}
+
 .btn:focus, .btn:active:focus, .btn.active:focus,
 .btn.focus, .btn:active.focus, .btn.active.focus {
   outline: none;
@@ -254,6 +314,45 @@ blockquote p:after {
   color: #4f7177;
   cursor: pointer;
   font-weight: bold;
+}
+
+#member_plan hr.page {
+  margin: -60px 0 40px;
+}
+
+.block-p {
+  background: #F5F5F5;
+  border: 1px solid #ddd;
+  padding: 40px 50px;
+}
+.block-p p {
+  margin: 0;
+}
+
+.note-p {
+  font-size: 13px;
+  color: #777;
+  padding: 50px;
+  line-height: 2;
+}
+
+figure {
+  margin: 30px 50px;
+}
+figure img {
+  width: 100%;
+}
+figure figcaption {
+  color: #A9A9A9;
+  font-size: 13px;
+  text-align: center;
+}
+figure figcaption a {
+  text-decoration: underline;
+  color: #A9A9A9;
+}
+figure figcaption a:hover {
+  background: none;
 }
 
 #section-1 h2 {
@@ -308,22 +407,6 @@ blockquote p:after {
 }
 #section-2 blockquote:before {
   top: 8px;
-}
-#section-2 .carousel-indicators {
-  bottom: -50px;
-}
-#section-2 .carousel-indicators .active {
-  background-color: #666;
-}
-#section-2 .carousel-indicators li {
-  border-color: #666;
-  background-color: #FFEC50;
-  border-width: 2px;
-}
-@media only screen and (max-width: 768px) {
-  #section-2 .carousel {
-    width: 100%;
-  }
 }
 
 #section-3 {
@@ -556,6 +639,54 @@ blockquote p:after {
   transform: scale(1, 1);
 }
 
+.checkbox-group label {
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 32px;
+  display: block;
+  font-weight: normal;
+}
+.checkbox-group label input[type='checkbox'] {
+  display: none;
+}
+.checkbox-group label input[type='checkbox'] + .label-text:before {
+  content: "\f096";
+  font-family: "FontAwesome";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  font-smoothing: antialiased;
+  width: 20px;
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 24px;
+  vertical-align: middle;
+}
+.checkbox-group label input[type='checkbox']:checked + .label-text:before {
+  content: "\f14a";
+  color: #438894;
+  animation: tick 180ms ease-in;
+}
+.checkbox-group label input[type='checkbox']:disabled + .label-text {
+  color: #aaa;
+}
+.checkbox-group label input[type='checkbox']:before {
+  content: "\f0c8";
+  color: #CCC;
+}
+@keyframes tick {
+  0% {
+    transform: scale(0);
+  }
+  90% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 #member-section {
   padding-bottom: 100px;
 }

@@ -23,7 +23,7 @@ body {
 	font-family: 'Roboto', "source-han-sans-traditional", sans-serif, "Microsoft JhengHei";
 	word-wrap: break-word;
 	word-break: normal;
-	line-height: 1.5;
+	line-height: 1.8;
 	overflow-x: hidden;
 }
 
@@ -67,11 +67,11 @@ h5 {
     font-size: 20px;
     color: $gray;
 }
-hr#page {
+hr.page {
     display: block;
     border: 1px;
     height: 64px;
-    margin: -60px 0 40px;
+    margin: 40px 0;
     background: url(../images/line_page.png) no-repeat top center;
 }
 .morning {
@@ -83,9 +83,28 @@ hr#page {
 	font-size: 14px;
 	font-weight: normal;
 }
+.carousel-indicators {
+		bottom: 80px;
+		.active {
+			background-color: $gray;
+		}
+		li {
+			border-color: $gray;
+			background-color: $yellow;
+			border-width: 2px;
+		}
+	}
+	@include respond-to (only-device){
+		.carousel {
+			width: 100%;
+			blockquote {
+			}
+		}
+	}
 .carousel {
     width: 65%;
     margin: 0 auto;
+    padding-bottom: 100px;
     .item {
     	text-align: center;
     }
@@ -136,15 +155,16 @@ input[type='text'], input[type='password'] {
 	background-color: $white;
 	border: 1px solid $gray-green;
 	color: $dark-gray-green;
+    margin: 10px;
 }
 .btn-primary {
 	background-color: $dark-gray-green;
 	clear: both;
 	border: 0;
+    margin: 10px;
 	color: $yellow;
-	margin: 0 auto;
 	display: block;
-	width: 300px;
+//	width: 300px;
 	&:hover, &:active, &:focus, &.active, &.dropdown-toggle, &.disabled {
 		border: 0;
 		color: $white;
@@ -181,6 +201,20 @@ input[type='text'], input[type='password'] {
 //		font-size: 12px;
 //	}
 }
+.item_number, .item_disc {
+    margin: 20px auto;
+    padding: 5px 20px;
+    li {
+        list-style-type: decimal;
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+}
+.item_disc {
+    li {
+        list-style-type: disc;
+    }
+}
 p {
 	font-size: 16px;
 	font-weight: normal;
@@ -188,13 +222,17 @@ p {
 	color: $dark-gray;
 	margin: 0 0 20px;
 //	text-align: justify;
+    a {
+        &:hover, &:focus { 
+            background: $yellow;
+        }
+    }
 }
 a {
 	color: $gray-green;
 	@include transition(all, .5s, ease-in);
 	&:hover, &:focus { 
 		text-decoration: none;
-        background: $yellow;
 	}
 }
 .clearfix {
@@ -219,6 +257,7 @@ blockquote {
 	padding-left: 100px;
 	position: relative;
 	border: 0;
+    font-size: 16px;
 }
 blockquote p {
 	text-align: left;
@@ -245,6 +284,31 @@ blockquote p:after {
 			left: -10px;
 			top: -20px;
 		}
+}
+.alert-dismissable .close, .alert-dismissible .close {
+        top: 4px;
+    }
+.alert {
+    font-size: 16px;
+    border: 0;
+    box-shadow: 0 2px 0 $yellow;
+    .close {
+        opacity: .8;
+        &:hover, &:focus {
+            opacity: 1;
+            color: $white;
+        }
+    }
+    &.alert-success {
+        background: $gray-green;
+        color: $white;
+        
+    }
+    &.alert-info {
+        background: $gray;
+        color: $yellow;
+        
+    }
 }
 @include respond-to (normal-mobile){
 //	p {
@@ -377,9 +441,46 @@ blockquote p:after {
     font-weight: bold;
     &:hover {
           
-        
     }
 }
+#member_plan {
+    hr.page {
+        margin: -60px 0 40px;
+    }    
+}
+.block-p {
+    background: $light-gray;    
+    border: 1px solid #ddd;
+    padding: 40px 50px;
+    p {
+        margin: 0
+    }
+}
+.note-p {
+    font-size: 13px;
+    color: #777;
+    padding: 50px;
+    line-height: 2;
+}
+figure {
+    margin: 30px 50px;
+    img {
+        width: 100%;
+    }
+    figcaption {
+        color: #A9A9A9;
+        font-size: 13px;
+        text-align: center;
+        a {
+            text-decoration: underline;
+            color: #A9A9A9;
+            &:hover {
+                background: none;
+            }
+        }
+    }
+}
+
 #section-1 {
 	h2 {
 		margin-bottom: 30px;
@@ -436,24 +537,24 @@ blockquote p:after {
 	blockquote:before {
 		top: 8px;
 	}
-	.carousel-indicators {
-		bottom: -50px;
-		.active {
-			background-color: $gray;
-		}
-		li {
-			border-color: $gray;
-			background-color: $yellow;
-			border-width: 2px;
-		}
-	}
-	@include respond-to (only-device){
-		.carousel {
-			width: 100%;
-			blockquote {
-			}
-		}
-	}
+//	.carousel-indicators {
+//		bottom: -50px;
+//		.active {
+//			background-color: $gray;
+//		}
+//		li {
+//			border-color: $gray;
+//			background-color: $yellow;
+//			border-width: 2px;
+//		}
+//	}
+//	@include respond-to (only-device){
+//		.carousel {
+//			width: 100%;
+//			blockquote {
+//			}
+//		}
+//	}
 }
 #section-3 {
 	padding-bottom: 0;
@@ -709,6 +810,58 @@ blockquote p:after {
         
         &:after {
             transform: scale(1, 1);
+        }
+    }
+}
+//checkbox
+.checkbox-group {
+    label {
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 32px;
+        display: block;
+        font-weight: normal;
+        input[type='checkbox'] {
+            display: none;
+
+            +.label-text:before {
+                content: "\f096";
+                font-family: "FontAwesome";
+                speak: none;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                font-smoothing: antialiased;
+                width: 20px;
+                display: inline-block;
+                margin-right: 8px;
+                font-size: 24px;
+                vertical-align: middle;
+            }
+            &:checked + .label-text:before {
+                content: "\f14a";
+                color: $gray-green;
+                animation: tick 180ms ease-in;
+            }
+            &:disabled + .label-text {
+               color: #aaa;
+           }
+            &:before {
+                content: "\f0c8";
+                color: #CCC;
+            }
+            @keyframes tick {
+                0% {
+                    transform: scale(0);
+                }
+                90% {
+                    transform: scale(1.4);
+                }
+                100% {
+                   transform: scale(1);
+                }
+            }
         }
     }
 }
