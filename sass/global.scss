@@ -1028,3 +1028,44 @@ figure {
 		padding-top: 50px;
 	}
 }
+.footer-sticky {
+     position: fixed;
+    bottom: -150px;
+    width: 100%;
+    height: 200px;
+    background: $dark-gray;
+    #demo {
+        height: 150px;
+        background: red;
+    }
+}
+
+
+footer {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+    left: 0;
+}
+#footer-content {
+	display: none;	
+}
+.toggle-footer {
+	width: 100%;
+	margin: 0 auto;
+	padding: 10px;
+	cursor: pointer;
+	
+	text-align: center;
+	
+	background-color: #B29F63;
+	opacity: 0.8;
+	
+	border-top-left-radius:  5px;
+	border-top-right-radius: 5px;
+}
+
+#inner_foot{
+    height:90px;
+    background-color: $dark-gray;
+}
