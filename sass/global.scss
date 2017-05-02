@@ -292,6 +292,10 @@ blockquote p:after {
     font-size: 16px;
     border: 0;
     box-shadow: 0 2px 0 $yellow;
+    i {
+        padding-right: 6px;
+        font-size: 20px;
+    }
     .close {
         opacity: .8;
         &:hover, &:focus {
@@ -302,7 +306,6 @@ blockquote p:after {
     &.alert-success {
         background: $gray-green;
         color: $white;
-        
     }
     &.alert-info {
         background: $gray;

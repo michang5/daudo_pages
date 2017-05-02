@@ -281,6 +281,10 @@ blockquote p:after {
   border: 0;
   box-shadow: 0 2px 0 #FFEC50;
 }
+.alert i {
+  padding-right: 6px;
+  font-size: 20px;
+}
 .alert .close {
   opacity: .8;
 }
