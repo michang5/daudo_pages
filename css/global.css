@@ -17,6 +17,7 @@ body {
   word-break: normal;
   line-height: 1.8;
   overflow-x: hidden;
+  background: #F5F5F5;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -230,7 +231,7 @@ hr {
   border: 0px;
   height: 15px;
   margin: 50px 0;
-  background: url(http://daodu.cto.tw/wp-content/uploads/2017/04/Line_short.png) no-repeat top center;
+  background: url(../images/daodu_icon.png) no-repeat top center;
   background-size: 220px;
 }
 
@@ -855,28 +856,257 @@ figure figcaption a:hover {
 
 footer {
   width: 100%;
+  padding: 0 20px;
   position: fixed;
   bottom: 0;
   left: 0;
+  background: #292929;
+}
+footer .col-sm-5 {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+footer h4 {
+  color: #FFEC50;
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+}
+footer .btn {
+  margin: 0;
+}
+footer input[type='text'], footer input[type='password'] {
+  height: 43px;
+}
+footer .footer-info {
+  border-top: 1px solid #444;
+  padding-top: 30px;
+  margin-top: 20px;
+  color: #fff;
+  font-weight: normal;
+  font-size: 13px;
+}
+footer .footer-info span {
+  display: block;
+}
+footer .footer-contact {
+  text-align: right;
+}
+footer .footer-contact li {
+  display: inline-block;
+  padding-left: 10px;
+}
+footer .footer-contact li a {
+  color: #fff;
+}
+footer .footer-contact li img {
+  width: 40px;
+}
+footer .footer-contact li span {
+  vertical-align: middle;
+  display: inherit;
+  padding-left: 10px;
+}
+footer .footer-form {
+  padding: 20px 0;
+}
+footer .footer_nav li {
+  display: inline-block;
+  padding-right: 10px;
+}
+footer .footer_nav li a {
+  color: #fff;
+  text-decoration: underline;
+}
+footer .footer_nav li a:hover {
+  color: #fff;
+}
+@media only screen and (max-width: 480px) {
+  footer .footer-form {
+    padding: 0 0 20px;
+  }
+  footer .col-sm-5 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  footer .col-sm-5:nth-of-type(2) {
+    padding-top: 20px;
+  }
+  footer .footer-contact, footer .footer-info {
+    text-align: center;
+  }
+  footer .footer-contact {
+    padding-top: 10px;
+  }
 }
 
 #footer-content {
   display: none;
+  padding: 40px 0;
 }
 
 .toggle-footer {
   width: 100%;
   margin: 0 auto;
-  padding: 10px;
+  padding: 4px;
   cursor: pointer;
   text-align: center;
-  background-color: #B29F63;
-  opacity: 0.8;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  height: 34px;
+}
+.toggle-footer img {
+  width: 80px;
+  height: 80px;
+  margin-top: -76px;
+}
+@media only screen and (max-width: 480px) {
+  .toggle-footer {
+    text-align: left;
+  }
 }
 
 #inner_foot {
   height: 90px;
   background-color: #4D4D4D;
+}
+
+#arrow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 34px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+#arrow:checked + label[for="arrow"]:before {
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+#arrow:checked + label[for="arrow"]:after {
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+label[for="arrow"] {
+  width: 100%;
+  height: 0;
+  transition: .75s;
+  -webkit-transition: 1s;
+  cursor: pointer;
+  position: relative;
+}
+label[for="arrow"]:before, label[for="arrow"]:after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  top: 15px;
+  background: #ccc;
+  transition: inherit;
+  -webkit-transition: inherit;
+}
+label[for="arrow"]:before {
+  left: auto;
+  right: 20px;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+label[for="arrow"]:after {
+  left: auto;
+  right: 6px;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+label[for="arrow"] span {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 18px;
+  display: block;
+  color: #CCCCCC;
+  text-align: right;
+  font-weight: normal;
+  padding-right: 42px;
+}
+
+#logo img {
+  width: 200px;
+  height: 95px;
+}
+
+.featured-posts-container {
+  display: none;
+}
+
+.cart-contents {
+  display: none;
+}
+
+.container.sidebar-open.left #sidebar {
+  float: none;
+}
+
+.container.sidebar-open.left #content {
+  float: none;
+}
+
+.container.sidebar-open #content {
+  width: 100%;
+}
+
+#sidebar {
+  width: 100%;
+}
+
+.theiaStickySidebar {
+  position: static !important;
+}
+
+#footer-widget-area {
+  display: none;
+}
+
+#tag_cloud-2 h4.widget-title {
+  font-size: 14px;
+  line-height: 20px;
+  color: #4D4D4D;
+  border-bottom: 0;
+  margin: 0;
+}
+
+#sidebar .widget {
+  padding: 0 0 10px;
+  margin-top: -10px;
+}
+
+#sidebar .widget-title:after {
+  content: none;
+}
+
+#sidebar .widget.widget_tag_cloud {
+  background: rgba(255, 255, 255, 0);
+  text-align: center;
+  box-shadow: none;
+}
+
+.widget .tagcloud a {
+  margin-bottom: 4px;
+  background: #fff;
+  color: #438894;
+  border-radius: 0 3px 0 0;
+  border: 1px solid #438894;
+  font-size: 13px !important;
+  padding: 3px 10px;
+}
+
+.post-entry-wrapper {
+  float: none;
 }
