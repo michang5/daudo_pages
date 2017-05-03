@@ -6,7 +6,6 @@
 }
 body, html {
   min-height: 100% !important;
-  height: 100%;
   padding: 0;
   margin: 0;
 }
@@ -1038,8 +1037,8 @@ label[for="arrow"] span {
 }
 
 #logo img {
-  width: 200px;
-  height: 95px;
+  width: 222px;
+  height: 64px;
 }
 
 .featured-posts-container {
@@ -1107,6 +1106,54 @@ label[for="arrow"] span {
   padding: 3px 10px;
 }
 
-.post-entry-wrapper {
+.sidebar-open .list-layout .post.format-audio .post-entry-wrapper {
   float: none;
+  clear: both;
+}
+
+.article-item post {
+  float: none;
+}
+
+#main-header.header-2, #main-header.header-4 {
+  background: #4D4D4D;
+}
+
+.main-navigation-wrapper.header-2 {
+  height: auto;
+}
+
+.main-navigation-wrapper.header-2 .container {
+  width: 100%;
+  background: #FFEC50;
+  height: 40px;
+  line-height: 40px;
+  text-align: left;
+}
+
+.nav-menu > li > a, .nav-menu > ul > li > a {
+  line-height: 40px;
+}
+
+#main-header.header-2 #main-top-wrapper {
+  padding: 90px 0 50px;
+}
+
+.post-header h1 a, .post-header h2 a, .post-header h1, .post-header h2 {
+  font-size: 40px;
+}
+
+.top-nav-right {
+  float: right;
+}
+.top-nav-right .top-member-nav {
+  font-size: 16px;
+  padding: 0 5px;
+  display: inline-block;
+}
+
+@media only screen and (max-width: 480px) {
+  #logo h1 a.custom-logo-link, #logo h2 a.custom-logo-link {
+    display: block;
+  }
 }
