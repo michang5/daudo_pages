@@ -76,13 +76,16 @@ hr.page {
     background: url(../images/line_page.png) no-repeat top center;
 }
 .morning {
-	width: 80%;
+	width: 90%;
 	box-shadow: inset 2px 0 0 #CCCCCC;
 	margin: 0 auto;
 	padding: 0 30px;
 	border-left: 8px solid #FFEC50;
 	font-size: 14px;
 	font-weight: normal;
+	@include respond-to (normal-mobile){
+		width: 100%;
+	}
 }
 .carousel-indicators {
 		bottom: 80px;
@@ -129,6 +132,7 @@ input[type='text'], input[type='password'] {
 }
 //btn style
 .btn {
+	box-shadow: none;
 	span {
 		padding: 0 5px;
 	}
@@ -157,6 +161,11 @@ input[type='text'], input[type='password'] {
 	border: 1px solid $gray-green;
 	color: $dark-gray-green;
     margin: 10px;
+	&:hover, &:active, &:focus, &.active, &.dropdown-toggle, &.disabled {
+		border: 0;
+		color: $white;
+		background-color: $dark-gray;
+	}
 }
 .btn-primary {
 	background-color: $dark-gray-green;
@@ -217,11 +226,12 @@ input[type='text'], input[type='password'] {
     }
 }
 p {
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: normal;
 	margin-bottom: 0;
 	color: $dark-gray;
 	margin: 0 0 20px;
+	line-height: 1.85;
 //	text-align: justify;
     a {
         &:hover, &:focus { 
@@ -250,25 +260,33 @@ hr {
     border:0px;
     height:15px;
 	margin: 50px 0;
-    background:url(../images/daodu_icon.png) no-repeat top center;
+    background:url(../images/Line_short.png) no-repeat top center;
 	background-size: 220px;
 }
 blockquote {
-	margin: 40px 0;
-	padding-left: 100px;
+	margin: 30px 0;
+	padding-left: 80px;
 	position: relative;
 	border: 0;
-    font-size: 16px;
+	font-size: 18px;
+	line-height: 1.85!important;
 }
 blockquote p {
 	text-align: left;
-	font-size: 16px;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 1.85!important;
 }
 blockquote:before {
-	content:url(http://daodu.cto.tw/wp-content/uploads/2017/04/quote_70.png);
+	content:"";
+	background: url('../images/quote_70.png');
+    background-size: 40px 40px;
+    display: inline-block;
+    width: 40px; 
+    height: 40px;
 	position: absolute;
-	left: 20px;
-	top: -20px;
+	left: 30px;
+	top: 14px;
 }
 blockquote p:after {
 	border-bottom: 0;
@@ -436,7 +454,8 @@ blockquote p:after {
 	font-size: 14px;
 	color: $gray;
 	display: block;
-	margin: 4px 0;
+	margin: 20px 0;
+	padding: 0 80px;
 }
 .link {
     text-decoration: underline;
@@ -461,7 +480,7 @@ blockquote p:after {
     }
 }
 .note-p {
-    font-size: 13px;
+    font-size: 15px;
     color: #777;
     padding: 50px;
     line-height: 2;
@@ -477,7 +496,8 @@ figure {
         text-align: center;
         a {
             text-decoration: underline;
-            color: #A9A9A9;
+            color: #A9A9A9!important;
+			border-bottom: 0;
             &:hover {
                 background: none;
             }
@@ -491,6 +511,7 @@ figure {
 	}
 }
 #member-section, #section-1, #section-2 ,#section-3 , #section-4, #section-5, #section-6, #section-7  {
+	background: $white;
 	h2 {
 		font-size: 40px;
 	}
@@ -869,8 +890,11 @@ figure {
         }
     }
 }
-
+#member {
+	background: #fff;
+}
 #member-section {
+	
 	padding-bottom: 100px;
 	label {
 		font-weight: normal;
@@ -958,6 +982,7 @@ figure {
 		background: $white;
 		border-radius: 6px;
 		border: 1px solid #ddd;
+		font-size: 12px;
 	}
 	.table-responsive {
 		border: 0;
@@ -993,6 +1018,7 @@ figure {
 			margin-bottom: 0;
 			.btn {
 				width: inherit;
+				margin: 0;
 			}
 		}
 		p.note {
@@ -1140,7 +1166,7 @@ footer {
 	padding: 4px;
 	cursor: pointer;
     text-align: center;
-    height: 34px;
+    height: 44px;
     img {
         width: 80px;
         height: 80px;
@@ -1293,10 +1319,66 @@ label[for="arrow"] {
     line-height: 40px;
 }
 #main-header.header-2  #main-top-wrapper {
-    padding: 90px 0 50px;
+    padding: 50px 0;
 }
 .post-header h1 a, .post-header h2 a, .post-header h1, .post-header h2 {
     font-size: 40px;
+}
+.top-search-area {
+	vertical-align: top;
+}
+.top-search-area a i {
+	background: none;
+	color: $yellow;
+}
+.top-search-area a {
+	line-height: 40px;
+}
+.top-search-area a:hover i {
+	color: $yellow;
+}
+.top-search-area a:hover, .top-search-area a:hover i {
+//	background: none;
+//	color: $yellow;
+}
+//.main-navigation-wrapper .top-search-area a:hover i {
+//	color: $dark-gray;
+//	background: none!important;
+//}
+
+.header-2 .top-search-area a, .header-3 .top-search-area a, .header-4 .top-search-area a {
+}
+.header-2 .top-search-area a i, .header-3 .top-search-area a i, .header-4 .top-search-area a i {
+	font-size: 22px;
+	background: $yellow;
+}
+.header-2 .nav-menu > li > a {
+	margin: 0;
+	padding: 0 10px!important;
+	margin-right: 4px!important;
+}
+.nav-menu .sub-menu a, .nav-menu .children a {
+	padding: 10px;
+}
+.nav-menu .sub-menu, .nav-menu .children {
+	padding: 0;
+}
+.nav-menu ul li {
+	padding: 0;
+}
+.main-navigation .nav-menu > li:last-child a {
+//	padding: 0 10px;
+}
+.main-navigation .nav-menu > li > a:hover {
+	background: $dark-gray-green;
+	color: $yellow!important;
+}
+.nav-menu .sub-menu a, .nav-menu .children a {
+	font-size: 14px;
+}
+.main-navigation .nav-menu .sub-menu a:hover, .main-navigation .nav-menu .children > li > a:hover {
+	color: $dark-gray-green;
+	background: $light-gray;
 }
 .top-nav-right {
 //    width: 220px;
@@ -1305,7 +1387,13 @@ label[for="arrow"] {
         font-size: 16px;
         padding: 0 5px;
         display: inline-block;
+		a {
+			color: $black;
+		}
     }
+}
+.sidebar-open .list-layout .post-header h2 a {
+	font-size: 40px;
 }
 @media only screen and (max-width: 480px) {
         
@@ -1314,330 +1402,216 @@ label[for="arrow"] {
                 display: block;
         }
 }
-//
-//#logo img {
-//	width: 200px;
-//	height: 95px;
-//}
-//#logo h1 a, #logo h2 a, #logo  {
-//	line-height: 0;
-//}
-//.featured-posts-container {
-//	display: none;
-//}
-//.cart-contents {
-//	display: none;
-//}
-//.sticky-navigation-wrapper .top-social-items a:hover, .main-navigation .nav-menu > li > a:hover, .main-navigation .nav-menu > li.current_page_item > a, .main-navigation .nav-menu > li.current_page_ancestor > a, .main-navigation .nav-menu > li.current-menu-item > a, .main-navigation .nav-menu > li:hover > a, .main-navigation-wrapper.header-1 .top-social-items a:hover, .main-navigation-wrapper .button-menu-mobile:hover, .mobile-search-area a, #mobile-social-items a:hover { background: #4D4D4D!important;
-//	color: #FFEC50!important;
-//}
-//#main-header.header-2  #main-top-wrapper {
-//	padding: 80px 0 0;
-//}
-//.nav-menu .sub-menu a, .nav-menu .children a {
-//	font-size: 16px;
-//}
-//
-//.nav-menu .sub-menu a:hover, .nav-menu .children a:hover {
-//box-shadow: 0 2px 0 0 #FFEC50;
-//	/*border-bottom: 1px solid #FFEC50;
-//	background: #4D4D4D;*/
-//	color: #4F7178!important;
-//}
-//
-//nav.secondary-navigation {
-//	display: none!important;
-//}
-//.header-2 .top-search-area a i, .header-3 .top-search-area a i, .header-4 .top-search-area a i {
-//	font-size: 20px;
-//	color: #FFEC50;
-//	background: rgba(255,255,255,0);
-//}
-//.secondary-navigation-wrapper.header-2 {
-//	background: #4D4D4;
-//	padding-top: 4px;
-//	height: 40px;
-//}
-//.post-header h2 a {
-//	line-height: 2;
-//}
-//.post-header .cat {
-//	margin-bottom: 4px;
-//}
-//
-//.post-entry-bottom a.custom-more-link:hover {
-//	background: #4D4D4D;
-//	color: #FFEC50;
-//}
-//.post-header {
-//	padding: 35px 35px 0;
-//}
-//.shop-icon-count, .main-navigation .nav-menu li.current_page_item a, .main-navigation .nav-menu li.current-menu-item a {
-//	box-shadow: 0 2px 0 0 #FFEC50;
-//	color: #438894;
-//}
-//.shop-icon-count, .main-navigation .nav-menu li.current_page_item a:after, .main-navigation .nav-menu li.current-menu-item a:after {
-//	background: none;
-//}
-//.mobile-search-area a i {
-//	background: #4D4D4D;
-//	color: #FFEC50;
-//}
-//.mobile-search-area a:hover i {
-//	background: #FFEC50;
-//	color: #4D4D4D;
-//}
-//#footer-widget-area .two-column .widget-columns {
-//	width: 80%;
-//	margin: 0 auto;
-//	float: none;
-//}
-//#mc4wp_form_widget-2 {
-//	width: 50%;
-//	float: left;
-//	padding: 30px
-//}
-//#footer-widget-area .widget-columns #text-4 {
-//	width: 50%;
-//	float: left;
-//	padding: 30px;
-//}
-//.mc4wp-form-fields input[type=email]{
-//	width: 77%;
-//	border-radius: 4px 0 0 4px;
-//}
-//.mc4wp-form-fields input[type=submit]{
-//	width: 22%;
-//	margin-left: -4px;
-//	background: #4d4d4d;
-//	color: #FFEC50;
-//	border: 1px solid 4d4d4d;
-//	border-radius: 0 4px 4px 0;
-//}
-//#footer-widget-area .widget-columns #text-4 input[type=submit] {
-//	width: 100%;
-//	border-radius: 4px;
-//	background: #4d4d4d;
-//	color: #FFEC50;
-//}
-//#footer-widget-area .widget-columns #text-2 {
-//	clear: both;
-//}
-//.footer-text {
-//	text-align: center;
-//}
-//.footer-text p {
-//	margin-bottom: 4px;
-//	margin-top: 4px;
-//	color: #4D4D4D;
-//	font-size: 13px;
-//}
-//#footer-widget-area input[type=email], #footer-widget-area input[type=pwd] {
-//	margin-bottom: 10px;
-//}
-//#footer-widget-area h4.widget-title {
-//	text-align: center;
-//}
-//.mc4wp-form label {
-//	font-style: normal;
-//}
-//.widget-title {
-//	color: #4D4D4D;
-//}
-//.container.sidebar-open.left #sidebar {
-//	float: none;
-//}
-//.container.sidebar-open.left #content {
-//	float: none;
-//}
-//.container.sidebar-open #content {
-//	width: 100%;
-//}
-//#sidebar {
-//	width: 100%;
-//}
-//@media only screen and (min-width: 1240px) {
-//	#sidebar {
-//		width: 100%;
-//	}
-//	.container.sidebar-open #content {
-//		width: 100%;
-//	}
-//}
-//.theiaStickySidebar {
-//	position: static!important;
-//}
-//#tag_cloud-2 h4.widget-title {
-//	display: none;
-//}
-//.widget .tagcloud a {
-//	margin-bottom: 4px;
-//	background: #4d4d4d;
-//	color: #FFEC50;
-//	border-radius: 0 3px 0 0;
-//	font-size: 13px!important;
-//}
-//#sidebar .widget.widget_tag_cloud {
-//	background: rgba(255,255,255,0);
-//	text-align: center;
-//	box-shadow: none;
-//}
-//.footer-sticker img {
-//	margin: 0 auto;
-//	width: 75px;
-//}
-//#text-3 {
-//	margin-top: -112px;
-//}
-//.post-header h1 {
-//	line-height: 2;
-//}
-//.top-search-area {
-//	margin-top: 12px;
-//}
-//.top-search-area a i {
-//	background: #4D4D4D!important;
-//	color: #FFEC50!important;
-//}
-//
-///*post custom style*/
-//hr {
-//	display:block;
-//    border:0px;
-//    height:15px;
-//	margin: 50px 0;
-//    background:url(http://daodu.cto.tw/wp-content/uploads/2017/04/Line_short.png) no-repeat top center;
-//background-size: 220px;
-//}
-//blockquote {
-//	margin: 40px 0;
-//	padding-left: 100px;
-//	position: relative;
-//}
-//blockquote p {
-//	text-align: left;
-//	font-size: 16px;
-//}
-//blockquote:before {
-//	content:url(http://daodu.cto.tw/wp-content/uploads/2017/04/quote_70.png);
-//	position: absolute;
-//	left: 20px;
-//	top: -20px;
-//}
-//blockquote p:after {
-//	border-bottom: 0;
-//}
-//.morning {
-//	width: 80%;
-//	box-shadow: inset 2px 0 0 #CCCCCC;
-//	margin: 0 auto;
-//	padding: 0 30px;
-//	border-left: 8px solid #FFEC50;
-//	font-size: 14px;
-//	font-weight: normal;
-//}
-//.essb_links {
-//	display: none;
-//}
-//.list-layout .post-list-text-content .post-header, 
-//.list-layout .post-list-text-content .post-header h2 {
-//	text-align: center
-//}
-//.post-header h1 a, .post-header h2 a, .post-header h1, .post-header h2, .sidebar-open .list-layout .post-header h2 a {
-//	letter-spacing: .01em;
-//	font-size: 32px;
-//}
-//p.note {
-//	font-size: 13px;
-//	width: 80%;
-//	margin: 20px auto 50px;
-//	color: #666;
-//}
-//.list-layout .post-list-text-content  .post-header  p:nth-of-type(1), .post-header p:nth-of-type(1) {
-//	font-size: 20px!important;
-//	font-weight: bold;
-//	color: #666!important;
-//}
-//.list-layout .post-list-text-content  .post-header  p:nth-of-type(2), .post-header p:nth-of-type(2){
-//	width: 20%;
-//	margin: 0;
-//	display: inline-block;
-//	padding: 10px;
-//}
-//.post-tags {
-//	width: 20%;
-//	margin: 0;
-//	padding: 10px;
-//	float: none;
-//	display: inline-block;
-//	font-style: normal
-//}
-//.post-tags em {
-//	display: none;
-//}
-//.post-tags a {
-//	background: #FFEC50;
-//	color: #4d4d4d;
-//	padding: 3px 10px;
-//	border-radius: 0 4px 0 0;
-//	
-//}
-//.post-tags a:hover {
-//	background: #666;
-//	color: #FFEC50;
-//}
-//@media only screen and (max-width: 1023px) {
-//	.top-search-area {
-//		display: none;
-//	}
-//	#footer-widget-area .two-column .widget-columns {
-//		width: 100%;
-//	}
-//	.container {
-//		width: 100%;
-//		
-//	}
-//}
-//@media only screen and (max-width: 767px) {
-//	.morning {
-//		width: 90%;
-//	}
-//	#mc4wp_form_widget-2, #footer-widget-area .widget-columns #text-4 {
-//	width: 100%;
-//	float: none;
-//}
-//	.custom-logo-link  {
-//		display: block;
-//	}
-//	#main-header.header-2  #main-top-wrapper {
-//	padding-top: 30px;
-//}
-//	#logo img {
-//	width: 160px;
-//	height: 75px;
-//	}
-//	.morning {
-//		width: 100%;
-//	}
-//	blockquote {
-//		margin: 40px 0;
-//		padding-left: 40px;
-//		position: relative;
-//	}
-//	blockquote:before {
-//	content:url(http://daodu.cto.tw/wp-content/uploads/2017/04/quote_50.png);
-//	position: absolute;
-//		left: -10px;
-//		top: -20px;
-//	}
-//}
-//@media only screen and (min-width: 1000px) { 
-//	.post-entry.full, .sidebar-open .list-layout .post .post-entry-wrapper .post-list-text-content {
-//		padding: 30px 60px;
-//	}
-//}
-//@media only screen and (max-width: 480px) { #logo h1 a.custom-logo-link, #logo h2 a.custom-logo-link  {
-//               display: block;
-//        }
-//}
-//
+.widget .tagcloud a:hover, #footer-widget-area .widget .tagcloud a:hover {
+	opacity: 1;
+	border-color: $gray-green;
+	background: $gray-green;
+	color: $yellow;
+}
+.post-header .cat {
+	margin: 0 10px;
+	line-height: 40px;
+	vertical-align: top;
+	display: inline-block;
+	a {
+		text-decoration: underline;
+//		&:after {
+//			content: ('/');
+//			padding: 0 2px;
+//		}
+	}
+}
+.issue {
+	font-size: 26px;
+	font-family: 'Helvetica','Arial', sans-serif, "Microsoft JhengHei";
+	color: $dark-gray;
+	line-height: 40px;
+	display: inline-block;
+}
+.post-list-text-content h2:before {
+	background: none!important;
+}
+.list-layout .post-list-text-content .post-header {
+	margin-bottom: 20px;
+}
+.date-author p span.date {
+	color: #666!important;
+	font-size: 15px;
+}
+.like-comment-buttons-wrapper {
+	display: none;
+}
+.list-layout .post p {
+	font-size: 18px;
+}
+.date-author .date {
+	color: #666!important;
+	font-size: 15px;
+	margin-right: 10px;
+}
+.post-tags {
+	padding: 10px 0;
+	margin-left: 20px;
+	font-style: normal;
+	font-size: 14px;
+	float: none;
+	display: inline-block;
+	a {
+		line-height: 28px;
+		color: $gray-green;
+		border-radius: 0 3px 0 0;
+   	 	border: 1px solid $gray-green;
+		font-size: 13px!important;
+    	padding: 3px 10px;
+		margin-right: 6px;
+		&:hover {
+			border-color: $gray-green;
+			background: $gray-green;
+			color: $yellow!important;
+		}
+	}
+}
+.list-layout .post-entry-bottom:not(.full) a.custom-more-link {
+	float: right;
+}
+.post-entry-bottom a.custom-more-link:after {
+	background: url(../images/icon_glasses.png) no-repeat center center;
+	content: "";
+	padding-left: 40px;
+}
+.post-entry-bottom a.custom-more-link:hover {
+	background: $yellow;
+	border: 1px solid $yellow;
+}
+.essb_links {
+	display: none;
+}
+.date-author {
+	float: none;
+}
+.post-header {
+	text-align: left;
+	@include respond-to (normal-mobile){
+		margin-bottom: 0;
+	}
+}
+.post-header h1, .post-header h2 {
+	width: 100%;
+	&:before {
+		background: none!important;
+	}
+	@include respond-to (normal-mobile){
+		font-size: 32px!important;
+	}
+}
+.single .container:not(.sidebar-open) .post-header h1 {
+	font-size: 40px;
+	
+}
+#main-container .container {
+	@include respond-to (normal-mobile){
+		padding: 0;
+	}
+}
+.post-line-bottom {
+	border: 0;
+	padding-bottom: 30px;
+}
+.post-share {
+	display: none;
+}
+.post-entry {
+	h2 {
+		font-size: 32px;
+		margin: 50px 0 10px;
+		@include respond-to (normal-mobile){
+			font-size: 24px;
+		}
+	}
+}
+.sticky-navigation-wrapper {
+	background: $dark-gray;
+	.main-navigation {
+		li {
+			a {
+				color: $yellow;
+			}
+		}
+	}
+}
+.header-2 .nav-menu .sub-menu, .nav-menu .children {
+	top: 40px;
+}
+.sticky-navigation-wrapper .main-navigation {
+	height: 40px;
+}
+.logo-sticky-menu {
+	padding: 0 10px 0 0;
+}
+.sticky-navigation-wrapper.no-floating {
+	background: $dark-gray;
+}
+.sticky-navigation-wrapper .button-menu-mobile {
+	font-size: 20px;
+	line-height: 42px;
+	color: $yellow;
+}
+.sticky-navigation-wrapper.floating {
+	height: 40px;
+	min-height: 0;
+	.top-nav-right .top-member-nav a {
+		color: $yellow;
+	}
+}
+.sticky-navigation-wrapper .button-menu-mobile {
+	color: $yellow;
+}
+
+.top-nav-right .top-member-nav a {
+	color: $black;
+	a {
+		color: $black;
+	}
+}
+.main-navigation-wrapper .button-menu-mobile {
+	line-height: 40px;
+	font-size: 18px;
+}
+.related-posts .item {
+	width: 100%;
+}
+.related-posts {
+	width: 100%;
+}
+.pagination {
+	display: block;
+}
+.mobile-search-area {
+	display: none!important;
+}
+@media only screen and (min-width: 1240px) {
+	.sidebar-open .list-layout .post.has-post-thumbnail .post-entry-wrapper, .sidebar-open .list-layout .post.format-gallery .post-entry-wrapper, .sidebar-open .list-layout .post.format-video .post-entry-wrapper, .sidebar-open .list-layout .post.format-audio .post-entry-wrapper {
+		width: 100%;
+	}
+	.sidebar-open .list-layout .post-featured-item {
+		width: 100%;
+	}
+}
+
+.search-form-area .search-form .search {
+	border-bottom: 1px solid $gray;
+	width: 70%;
+	margin: 0 auto;
+}
+.search-form-area .search-form {
+	text-align: center;
+}
+.related-posts {
+	display: none;
+}
+.single .post.article-item {
+	padding: 10px;
+}
+.post-pagination.pagination {
+	max-width: 100%;
+}

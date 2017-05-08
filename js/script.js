@@ -66,5 +66,11 @@ $(function () {
 			});
 		}
 	});
+	
+$('.toggle-footer').click(function(){
+  $('.toggle span').hide();
+});
 
+
+	
 });
