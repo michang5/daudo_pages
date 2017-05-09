@@ -1257,7 +1257,7 @@ label[for="arrow"] span {
 }
 
 .post-header .cat {
-  margin: 0 10px;
+  margin: 0;
   line-height: 40px;
   vertical-align: top;
   display: inline-block;
@@ -1303,7 +1303,6 @@ label[for="arrow"] span {
 
 .post-tags {
   padding: 10px 0;
-  margin-left: 20px;
   font-style: normal;
   font-size: 14px;
   float: none;
@@ -1345,6 +1344,8 @@ label[for="arrow"] span {
 
 .date-author {
   float: none;
+  line-height: 40px;
+  padding: 0 10px;
 }
 
 .post-header {
@@ -1376,6 +1377,15 @@ label[for="arrow"] span {
   #main-container .container {
     padding: 0;
   }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    width: 970px !important;
+  }
+}
+.main-navigation-wrapper.header-2 {
+  background: #FFEC50;
 }
 
 .post-line-bottom {
@@ -1495,4 +1505,8 @@ label[for="arrow"] span {
 
 .post-pagination.pagination {
   max-width: 100%;
+}
+
+.post-entry-bottom a.custom-more-link {
+  font-size: 15px;
 }
