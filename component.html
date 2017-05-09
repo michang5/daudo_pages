@@ -34,20 +34,19 @@
 </head>
 <body>
 	
-	
 	<footer>
         <div class="toggle-footer toggle">
-           
-            <input type="checkbox" id="arrow" />
+
+            <input type="checkbox" id="arrow">
             <label for="arrow">
-                <span>免費看 3 篇精選好文</span>
+                <span class="">免費看 3 篇精選好文</span>
             </label>
-            <img src="images/daodu_icon.png" alt="科技島讀">
+            <img src="http://daodu.cto.tw/wp-content/themes/child_elletta/images/daodu_icon.png" alt="科技島讀">
         </div>
-        <div id="footer-content">
+        <div id="footer-content" style="display: none;">
             <div class="container">
                <div class="row footer-form">
-                    <div class="col-sm-5 col-sm-offset-1">
+                    <div class="col-sm-6">
                         <h4>輸入 EMAIL 免費看 3 篇精選好文</h4>
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="請輸入 Email">
@@ -56,9 +55,9 @@
                               </span>
                         </div>
                     </div>
-                    <div class="col-sm-5">
+                    <div class="col-sm-6">
                         <h4>讓你比別人更聰明的策略觀點</h4>
-                        <button type="button" class="btn btn-primary btn-lg btn-block">加入科技島讀</button>
+                        <button type="button" onclick="location.href='member-plan/'" class="btn btn-primary btn-lg btn-block">加入科技島讀</button>
                     </div>
                </div>
                 <div class="row footer-info">
@@ -69,12 +68,12 @@
                         </ul>
                         <span>COPYRIGHT © 2017 DAODU TECH, ALL RIGHTS RESERVED.</span>
                         <span>有物報告製作 106 台北市大安區敦化南路一段 218 號 3 樓</span>
-                        
+
                     </div>
                     <div class="col-sm-6">
                         <ul class="footer-contact">
-                            <li><a href="#"><img src="images/icon_email.png" alt=""><span>Email</span></a></li>
-                            <li><a href="#"><img src="images/facebook_messenger.png" alt=""><span>messenger</span></a></li>
+                            <li><a href="mailto: contact@yowureport.com"><img src="http://daodu.cto.tw/wp-content/themes/child_elletta/images/icon_email.png" alt=""><span>Email</span></a></li>
+                            <li><a href="https://m.me/YoWuReport"><img src="http://daodu.cto.tw/wp-content/themes/child_elletta/images/facebook_messenger.png" alt=""><span>Messenger</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -82,7 +81,7 @@
         </div>
     </footer>
 	
-	
+
 	<!--jQuery--> 
 
 	<script type="text/javascript" src="js/jquery-2.2.4.js"></script>
@@ -100,11 +99,13 @@
 		  },
 		  allowPageScroll:"vertical"
 
-		});
+		});       
         jQuery(document).ready(function(){
             $(".toggle-footer").click(function(){
-            $("#footer-content").slideToggle("slow");
+            $("#footer-content").slideToggle('800', "swing", function () {
+        });
     });
+        
 });
 	</script>
 
