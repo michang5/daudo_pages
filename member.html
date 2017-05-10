@@ -47,6 +47,9 @@
 						<label>密碼</label><span class="link">修改密碼</span>
 						<input type="password" class="form-control" id="pwd" placeholder="************">
 					</div>
+					<div class="form-group">
+					    <button type="button" class="btn btn-primary btn-lg col-sm-4" id="modify-btn" style="margin-right:10px;">確認修改</button>
+                    </div>
 <!--
 					<div class="form-group">
 						<label>再次確認密碼</label>
@@ -59,76 +62,12 @@
 				</div>
 				<div id="card-info" class="col-sm-5 col-sm-offset-1">
 					<h4>信用卡資訊</h4>
-<!--
-					<button type="button" class="btn btn-defult btn-lg" data-toggle="collapse" data-target="#add-creditcard">新增信用卡資訊</button>
+<!--					<button type="button" class="btn btn-defult btn-lg">新增信用卡資訊</button>-->
 
-					<div id="add-creditcard" class="collapse add-creditcard">
-						<div class="form-group card-cate">
-							<label for="card-cate">卡別</label>
-							<select class="form-control" id="card-cate">
-								<option>VISA</option>
-								<option>Master</option>
-								<option>JCP</option>
-								<option>American Express</option>
-							</select>
-						</div>
-						<div class="form-group card-nummber">	
-							<label for="card-num">卡號</label>
-							<div>
-								<input type="text" id="card-nummber-1" maxlength="4" />
-								<input type="text" id="card-nummber-2" maxlength="4" />
-								<input type="text" id="card-nummber-3" maxlength="4" />
-								<input type="text" id="card-nummber-4" maxlength="4" />
-							</div>
-						</div>
-						<div class="form-group card-cvv">	
-							<label for="card-cvv">安全碼</label>
-							<input type="text" id="card-cvv" maxlength="3" />
-							<span class="note noteclick" onclick="ccv1Function()">安全碼是什麼</span>
-							<div id="ccv-img1" class="ccv-img">
-								<button type="button" class="close close-alert" >×</button><img src="images/cvv.png">
-							</div>
-						</div>
-						<div class="form-group">
-							<button type="button" class="btn btn-primary btn-lg" id="modify-btn">確認修改</button>
-						</div>
-					</div>
--->
 					<div id="creditcard-info">
 						<p>扣款信用卡別：VISA</p>
-						<p>信用卡末四碼：**** **** **** 1234</p>
-						<button type="button" class="btn btn-defult btn-lg" data-toggle="collapse" data-target="#change-creditcard">變更卡片</button>
-						<div id="change-creditcard" class="collapse change-creditcard">
-							<div class="form-group card-cate">
-								<label for="card-cate">卡別</label>
-								<select class="form-control" id="card-cate">
-									<option>VISA</option>
-									<option>Master</option>
-									<option>JCP</option>
-									<option>American Express</option>
-								</select>
-							</div>
-							<div class="form-group card-nummber">	
-								<label for="card-num">卡號</label>
-								<div>
-									<input type="text" id="card-nummber-1" maxlength="4" />
-									<input type="text" id="card-nummber-2" maxlength="4" />
-									<input type="text" id="card-nummber-3" maxlength="4" />
-									<input type="text" id="card-nummber-4" maxlength="4" />
-								</div>
-							</div>
-							<div class="form-group card-cvv">	
-								<label for="card-cvv">安全碼</label>
-								<input type="text" id="card-cvv" maxlength="3" />
-								<span class="note noteclick" onclick="ccv2Function()">安全碼是什麼</span>
-								<div id="ccv-img2" class="ccv-img">
-									<button type="button" class="close close-alert" >×</button><img src="images/cvv.png">
-								</div>
-							</div>
-							<div class="form-group">
-								<button type="button" class="btn btn-primary btn-lg" id="modify-btn">確認修改</button>
-							</div>
-						</div>
+						<p>信用卡末四碼：1234</p>
+						<button type="button" class="btn btn-defult btn-lg">變更信用卡</button>
 					</div>
 				</div>
 			</div>
@@ -146,8 +85,8 @@
                             <label for="plan-2" class="radio_label">年付 1,699 元</label>
                         </div>
 					    <div class="form-group">
-                            <button type="button" class="btn btn-primary btn-lg col-sm-4" id="modify-btn">確認修改</button>
-                            <p class="note inline">您變更的方案，將於之前方案款項到期日生效</p>
+                            <button type="button" class="btn btn-primary btn-lg col-sm-4" id="modify-btn" style="margin-right:10px;">確認修改</button>
+                            <p class="inline small">您變更的方案，將於之前方案款項到期日生效</p>
                         </div>
 					</div>
 					
@@ -157,15 +96,15 @@
 				<div class="col-sm-10 col-sm-offset-1">
 					<div id="auto-payment">
 						<div class="form-group">
-							<p>款項到期日：2018/12/12</p>
+							<p>訂閱到期日：2018/12/12</p>
 							<div class="row">
                                 <div class="col-xs-6">
-                                    <button type="button" class="btn btn-defult btn-md" id="modify-btn">取消自動扣款</button>
-                                    <p class="note">如選擇取消，您仍將保持會員資格直到款項到期日</p>
+                                    <button type="button" class="btn btn-defult btn-md" id="modify-btn">停止自動扣款</button>
+                                    <p class="note">如選擇停止，您仍將保持會員資格直到款項到期日</p>
                                 </div>
 							    <div class="col-xs-6">
-                                   <button type="button" class="btn btn-defult btn-md" id="modify-btn">停止訂閱</button>
-                                    <p class="note">如選擇停止訂閱，我們將依照訂閱期剩餘天數計算退費金額。（首次購買者 30 天內保證無條件全額退費）</p>
+                                   <button type="button" class="btn btn-defult btn-md" id="modify-btn">取消訂閱</button>
+                                    <p class="note">首次購買 30 天內可申請全額退費</p>
                                 </div>
 							</div>
 							
@@ -184,25 +123,25 @@
 									<tr>
 										<th>日期</th>
 										<th>方案</th>
-										<th>服務週期</th>
+										<th>金額</th>
 										<th>付款方式</th>
-										<th>合計</th>
+										<th>服務週期</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td>2014/12/12</td>
 										<td>年付 1,699 元</td>
-										<td>2014/12/12~2015/12/11</td>
-										<td>信用卡 **** **** **** 1234</td>
 										<td>1,699</td>
+										<td>信用卡 **** **** **** 1234</td>
+										<td>2014/12/12~2015/12/11</td>
 									</tr>
 									<tr>
 										<td>2015/12/12</td>
 										<td>年付 1,699 元</td>
-										<td>2015/12/12~2016/12/11</td>
-										<td>超商付款</td>
 										<td>1,699</td>
+										<td>超商付款</td>
+										<td>2015/12/12~2016/12/11</td>
 									</tr>
 								</tbody>
 							</table>
