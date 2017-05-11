@@ -268,6 +268,9 @@ ul, li {
 ul {
   padding-left: 30px;
 }
+footer ul {
+  padding-left: 0;
+}
 
 .article-item ul li {
   list-style: disc;
@@ -1773,4 +1776,40 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 
 .pagination .current {
   padding: 10px 17px;
+}
+
+#content .page {
+  padding: 35px;
+  margin-top: 30px;
+  background: #fff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.05);
+  padding-bottom: 50px;
+}
+
+.page-container {
+  box-shadow: none;
+}
+
+#main-container {
+  padding-bottom: 120px;
+}
+
+h1:after, h2:after {
+  background: none !important;
+}
+
+.page-container .post-header {
+  text-align: center;
+}
+
+div.member-only {
+  padding-bottom: 50px;
+  padding-top: 30px;
+  margin-top: 30px;
+  background: #fafafa;
+}
+div.member-only .btn {
+  margin: 0 auto;
 }
