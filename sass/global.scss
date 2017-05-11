@@ -89,15 +89,26 @@ hr.page {
 	}
 }
 .carousel-indicators {
-    top:-40px;
-    bottom: 0;
+   
+    &.carousel-indicators-1 {
+        top: -40px;
+        bottom: 0;
+    }
+    &.carousel-indicators-2 {
+        bottom: -20px;
+    }
     .active {
         background-color: $gray;
+        width: 16px;
+        height: 16px;
     }
     li {
         border-color: $gray;
         background-color: $yellow;
         border-width: 2px;
+        width: 14px;
+        height: 14px;
+        vertical-align: middle;
     }
 }
 	@include respond-to (only-device){
@@ -121,6 +132,7 @@ hr.page {
             padding-left: 20px;
             font-size: 15px;
             color: $gray;
+            font-style: italic;
             &:before {
             	content: ('\2500');
             	padding-right: 8px;
@@ -163,7 +175,7 @@ input[type='text'], input[type='password'] {
 	border: 1px solid $gray-green;
 	color: $dark-gray-green;
     margin: 10px;
-	&:hover, &:active, &:focus, &.active, &.dropdown-toggle, &.disabled {
+	&:hover, &:active, &:focus, &.active, &.dropdown-toggle {
 		border: 0;
 		color: $white;
 		background-color: $dark-gray;
@@ -177,7 +189,7 @@ input[type='text'], input[type='password'] {
 	color: $yellow;
 	display: block;
 //	width: 300px;
-	&:hover, &:active, &:focus, &.active, &.dropdown-toggle, &.disabled {
+	&:hover, &:active, &:focus, &.active, &.dropdown-toggle {
 		border: 0;
 		color: $white;
 		background-color: $dark-gray;
@@ -206,7 +218,8 @@ input[type='text'], input[type='password'] {
 		border: 0;
 		&:hover, &:focus, &.focus, &:active, &.active, &[disabled], &[disabled]:hover, &[disabled]:focus, &[disabled].focus, &[disabled]:active, &[disabled].active {
 			border: 0;
-			background-color: $dark-gray;
+			background-color: $dark-gray-green;
+            color: $yellow;
 		}
 	}
 //	@include respond-to (normal-mobile){
@@ -234,6 +247,7 @@ p {
 	color: $dark-gray;
 	margin: 0 0 20px;
 	line-height: 1.85;
+    letter-spacing: -.01em;
 //	text-align: justify;
     a {
         border: 0;
@@ -265,6 +279,10 @@ ul, li {
 	padding: 0;
 	-webkit-padding-start: 0;
 	list-style: none;
+    font-size: 16px;
+}
+ul {
+    padding-left: 30px;
 }
 .article-item {
     ul li {
@@ -639,7 +657,8 @@ ul.pen-list {
     .row {
         padding-top: 20px;
     }
-	.plan {
+	.plan a {
+        display: block;
 		margin-top: 20px;
 		margin-bottom: 20px;
 		box-shadow: 0 12px 20px rgba(0,0,0,.1), 0 3px 10px rgba(0,0,0,.1);
@@ -651,6 +670,8 @@ ul.pen-list {
         height: 160px;
         margin: 0 auto;
 		background: $yellow;
+        font-size: 15px;
+        color: $dark-gray;
 //		color: $yellow;
 //		background-image: linear-gradient( rgba($light-gray, 0) 90%, $light-gray 91% );
         vertical-align: bottom;
@@ -779,6 +800,7 @@ ul.pen-list {
 }
 .help-inline {
     color: #E83C51;
+    font-size: 14px;
 }
 // Radio
 .radio {
@@ -1508,7 +1530,7 @@ label[for="arrow"] {
     a {
 		line-height: 28px;
 		color: $gray-green;
-		border-radius: 0 3px 0 0;
+		border-radius: 0 5px 0 0;
    	 	border: 1px solid $gray-green;
 		font-size: 13px!important;
     	padding: 3px 10px;
@@ -1520,34 +1542,35 @@ label[for="arrow"] {
 			background: $gray-green;
 			color: $yellow!important;
 		}
+        &.member-only {
+            position: relative;
+            padding-left: 30px;
+            &:before {
+                content: "\f023";
+                font-family: FontAwesome;
+                font-style: normal;
+                font-weight: normal;
+                padding-right: 6px;
+                position: absolute;
+                left: 14px;
+                top: 5px;
+            }
+        }
     }
     a:hover {
         color: $yellow!important;
     }
 	
 }
-.member-only {
-    position: relative;
-    padding-left: 24px;
-    line-height: 28px;
-    display: inline-block;
-		color: $gray-green;
-		border-radius: 0 3px 0 0;
-   	 	border: 1px solid $gray-green;
-		font-size: 13px;
-    	padding: 3px 10px 3px 30px;
-		margin-right: 6px;
-    &:before {
-        content: "\f023";
-        font-family: FontAwesome;
-		font-style: normal;
-        font-weight: normal;
-        padding-right: 6px;
-        position: absolute;
-        left: 14px;
-        top: 5px;
-    }
-}
+//.member-only {
+//		
+//		border-radius: 0 3px 0 0;
+//   	 	border: 1px solid $gray-green;
+//		font-size: 13px;
+//    	padding: 3px 10px 3px 30px;
+//		margin-right: 6px;
+//    
+//}
 
 
 .list-layout .post-entry-bottom:not(.full) a.custom-more-link {
@@ -1619,8 +1642,11 @@ label[for="arrow"] {
 	}
 }
 @media only screen and (min-width: 1200px) {
-	.container {
-		width: 970px!important;
+	.single-post .container {
+		width: 830px!important;
+	}
+    .container {
+		width: 1000px!important;
 	}
     footer {
        .container {
@@ -1772,4 +1798,11 @@ label[for="arrow"] {
     margin: 25px auto 0;
     padding: 15px 0;
     background: transparent;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill  {
+    background: $white;
+}
+.pagination .current {
+    padding: 10px 17px;
 }
