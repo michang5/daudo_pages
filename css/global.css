@@ -1014,22 +1014,9 @@ ul.pen-list li:before {
 }
 
 footer {
-  width: 100%;
-  padding: 0 20px;
   position: fixed;
   bottom: 0;
   left: 0;
-  background: #292929;
-}
-footer .col-sm-5 {
-  padding-left: 30px;
-  padding-right: 30px;
-}
-footer h4 {
-  color: #FFEC50;
-  font-size: 18px;
-  line-height: 26px;
-  text-align: center;
 }
 footer .btn {
   margin: 0;
@@ -1039,50 +1026,14 @@ footer input[type='text'], footer input[type='password'] {
 }
 footer #footer-content {
   display: none;
-  padding: 40px 0;
 }
 footer .footer-info {
   border-top: 1px solid #444;
   padding-top: 30px;
   margin-top: 20px;
-  color: #fff;
-  font-weight: normal;
-  font-size: 13px;
-}
-footer .footer-info span {
-  display: block;
-}
-footer .footer-contact {
-  text-align: right;
-}
-footer .footer-contact li {
-  display: inline-block;
-  padding-left: 10px;
-}
-footer .footer-contact li a {
-  color: #fff;
-}
-footer .footer-contact li img {
-  width: 40px;
-}
-footer .footer-contact li span {
-  vertical-align: middle;
-  display: inherit;
-  padding-left: 10px;
 }
 footer .footer-form {
   padding: 20px 0;
-}
-footer .footer_nav li {
-  display: inline-block;
-  padding-right: 10px;
-}
-footer .footer_nav li a {
-  color: #fff;
-  text-decoration: underline;
-}
-footer .footer_nav li a:hover {
-  color: #fff;
 }
 footer .footer-form .col-sm-6:nth-of-type(1) {
   padding-left: 50px;
@@ -1093,16 +1044,6 @@ footer .footer-form .col-sm-6:nth-of-type(2) {
   padding-right: 50px;
 }
 @media only screen and (max-width: 767px) {
-  footer {
-    padding: 0 5px;
-  }
-  footer .footer-info {
-    margin-top: 10px;
-    padding-top: 20px;
-  }
-  footer #footer-content {
-    padding: 20px 0;
-  }
   footer .footer-form {
     padding: 0 0 10px;
   }
@@ -1113,12 +1054,91 @@ footer .footer-form .col-sm-6:nth-of-type(2) {
   footer .footer-form .col-sm-6:nth-of-type(2) {
     padding-top: 20px;
   }
-  footer .footer-contact, footer .footer-info {
+}
+
+#footer, footer {
+  width: 100%;
+  padding: 0 20px;
+  background: #292929;
+}
+#footer .col-sm-5, footer .col-sm-5 {
+  padding-left: 30px;
+  padding-right: 30px;
+  vertical-align: top;
+}
+#footer h4, footer h4 {
+  color: #FFEC50;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+}
+#footer #footer-content, footer #footer-content {
+  padding: 40px 0;
+}
+#footer #footer-content-member, footer #footer-content-member {
+  padding: 0 0 40px;
+}
+#footer .footer-info, footer .footer-info {
+  color: #fff;
+  font-weight: normal;
+  font-size: 13px;
+}
+#footer .footer-info span, footer .footer-info span {
+  display: block;
+}
+#footer .footer-contact, footer .footer-contact {
+  text-align: right;
+}
+#footer .footer-contact li, footer .footer-contact li {
+  display: inline-block;
+  padding-left: 10px;
+}
+#footer .footer-contact li a, footer .footer-contact li a {
+  color: #fff;
+}
+#footer .footer-contact li img, footer .footer-contact li img {
+  width: 40px;
+}
+#footer .footer-contact li span, footer .footer-contact li span {
+  vertical-align: middle;
+  display: inherit;
+  padding-left: 10px;
+}
+#footer .footer_nav li, footer .footer_nav li {
+  display: inline-block;
+  padding-right: 10px;
+}
+#footer .footer_nav li a, footer .footer_nav li a {
+  color: #fff;
+  text-decoration: underline;
+}
+#footer .footer_nav li a:hover, footer .footer_nav li a:hover {
+  color: #fff;
+}
+@media only screen and (max-width: 767px) {
+  #footer, footer {
+    padding: 0 5px;
+  }
+  #footer .footer-info, footer .footer-info {
+    margin-top: 10px;
+    padding-top: 20px;
+  }
+  #footer #footer-content, footer #footer-content {
+    padding: 20px 0;
+  }
+  #footer .footer-contact, #footer .footer-info, footer .footer-contact, footer .footer-info {
     text-align: center;
   }
-  footer .footer-contact {
+  #footer .footer-contact, footer .footer-contact {
     padding-top: 10px;
   }
+}
+
+#footer {
+  margin-top: 40px;
+}
+#footer .footer-info {
+  padding-top: 15px;
 }
 
 .toggle-footer {
@@ -1138,6 +1158,15 @@ footer .footer-form .col-sm-6:nth-of-type(2) {
   .toggle-footer {
     text-align: left;
   }
+}
+
+.daodu-stick {
+  text-align: center;
+}
+.daodu-stick img {
+  width: 80px;
+  height: 80px;
+  margin-top: -40px;
 }
 
 #inner_foot {
