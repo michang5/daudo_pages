@@ -73,7 +73,7 @@
             <h2>讀者推薦</h2>
 			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 				<!-- Indicators -->
-				<ol class="carousel-indicators carousel-indicators-1">
+				<ol class="carousel-indicators carousel-indicators-group carousel-indicators-1">
 					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 					<li data-target="#myCarousel" data-slide-to="1"></li>
 					<li data-target="#myCarousel" data-slide-to="2"></li>
@@ -81,7 +81,7 @@
 					<li data-target="#myCarousel" data-slide-to="4"></li>
 -->
 				</ol>
-                <ol class="carousel-indicators carousel-indicators-2">
+        <ol class="carousel-indicators-group carousel-indicators-2">
 					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 					<li data-target="#myCarousel" data-slide-to="1"></li>
 					<li data-target="#myCarousel" data-slide-to="2"></li>
@@ -89,7 +89,6 @@
 					<li data-target="#myCarousel" data-slide-to="4"></li>
 -->
 				</ol>
-				<!-- Wrapper for slides -->
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
 						<blockquote>
@@ -306,20 +305,13 @@
 	</div>
     </div>
 	
-	
-	
-	
-	
-	
-	
-	
-	
 	<!--jQuery--> 
 
 	<script type="text/javascript" src="js/jquery-2.2.4.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js" ></script>
+	<script type="text/javascript" src="js/bootstrap.min.js" ></script>
 	<script type="text/javascript" src="js/jquery.touchSwipe.min.js" ></script>
 	<script type="text/javascript" src="js/jquery.mobile.custom.min.js"></script>
+<!--
 	<script>
 		$(".carousel").swipe({
 
@@ -338,14 +330,19 @@
 				scrollTop: $($(this).attr('href')).offset().top - 50
 			}, 500);
 			return false;
-		}
-            
-            
+		}    
 	});
-    $('.carousel-indicators li').on('click', function() {
-      $('.carousel').carousel(parseInt(this.getAttribute('data-slide-to')));
-    });
 	</script>
-
+-->
+    <script>
+    
+    jQuery(function(){
+  $('#myCarousel').on('slide.bs.carousel', function (event) {
+    var index = $(event.relatedTarget).index();
+    $('.carousel-indicators-2').find('li').filter('.active').removeClass('active').end().eq(index).addClass('active');
+  })
+});
+        
+    </script>
 </body>
 </html>
