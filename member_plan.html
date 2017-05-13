@@ -311,7 +311,6 @@
 	<script type="text/javascript" src="js/bootstrap.min.js" ></script>
 	<script type="text/javascript" src="js/jquery.touchSwipe.min.js" ></script>
 	<script type="text/javascript" src="js/jquery.mobile.custom.min.js"></script>
-<!--
 	<script>
 		$(".carousel").swipe({
 
@@ -332,16 +331,13 @@
 			return false;
 		}    
 	});
-	</script>
--->
-    <script>
     
-    jQuery(function(){
-  $('#myCarousel').on('slide.bs.carousel', function (event) {
-    var index = $(event.relatedTarget).index();
-    $('.carousel-indicators-2').find('li').filter('.active').removeClass('active').end().eq(index).addClass('active');
-  })
-});
+		jQuery(function(){
+	  $('#myCarousel').on('slide.bs.carousel', function (event) {
+		var index = $(event.relatedTarget).index();
+		$('.carousel-indicators-2').find('li').filter('.active').removeClass('active').end().eq(index).addClass('active');
+	  })
+	});
         
     </script>
 </body>
