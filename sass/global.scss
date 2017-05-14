@@ -991,7 +991,7 @@ ul.pen-list {
 
 #member-section {
 	background: #f5f5f5;
-    margin-top: 40px;
+    margin-top: 10px;
     margin-bottom: 40px;
     .container {
         padding: 80px 0;
@@ -1010,6 +1010,8 @@ ul.pen-list {
 	}
 	.btn {
 		width: 100%;
+        margin-left: 0;
+        margin-right: 0;
 	}
 	#add-creditcard, #change-creditcard {
 		padding: 20px 0;
@@ -1037,7 +1039,7 @@ ul.pen-list {
 					padding: 10px;
 				}
 			}
-		}
+        }
 	}
     .note {
         padding: 0;
@@ -1118,6 +1120,11 @@ ul.pen-list {
 			text-align: center;
 		}
 	}
+    p.note {
+        text-align: left;
+        display: block;
+        margin: 0;
+    }
 	#auto-payment {
 		background: #f6f6f6;
 		padding: 20px;
@@ -1129,10 +1136,6 @@ ul.pen-list {
 				margin: 0;
 			}
 		}
-		p.note {
-			text-align: left;
-			display: block;
-		}
 	}
 	#current-plan {
 		padding-top: 50px;
@@ -1141,12 +1144,11 @@ ul.pen-list {
 			margin: 0;
 		}
 		p.note {
-			display: block;
-			text-align: left;
 			&.inline {
 				line-height: 40px;
 				padding-left: 10px;
 				display: inline-block;
+                
 			}
 		}
 		p a {
@@ -1162,6 +1164,29 @@ ul.pen-list {
 	#payment-history {
 		padding-top: 50px;
 	}
+    
+    @include respond-to (only-mobile){
+        #auto-payment {
+            .form-group {
+                .btn {
+                    width: 100%
+                }
+            }
+        }
+        .container {
+            >.row {
+                margin: 0;
+                padding: 0 10px;
+            }
+        }
+    }
+    @include respond-to (normal-mobile){
+        .container {
+            .col-xs-6 {
+                width: 100%;
+            }
+        }
+    }
 }
 .footer-sticky {
     position: fixed;
@@ -1169,10 +1194,6 @@ ul.pen-list {
     width: 100%;
     height: 200px;
     background: $dark-gray;
-//    #demo {
-//        height: 150px;
-//        background: red;
-//    }
 }
 
 footer {
@@ -1211,15 +1232,6 @@ footer {
             }
         }
     }
-//	@include respond-to (only-device){
-//        .footer-form {
-//            .col-sm-6 {
-//                &:nth-of-type(2) {
-//                    padding-top: 20px
-//                }
-//            }
-//        }
-//	}
     @include respond-to (only-mobile){
         .footer-form {
             padding: 0 0 10px;
@@ -1785,7 +1797,7 @@ label[for="arrow"] {
 .container {
 	@include respond-to (only-device){
 		max-width: 750px;
-		width: 750px;
+//		width: 750px;
 	}
     @include respond-to (normal-mobile){
 		width: 90%;
@@ -1859,17 +1871,18 @@ label[for="arrow"] {
 		vertical-align: top;
 		a {
 			color: $black;
+            padding: 10px 6px;
 			span {
-				position: relative;
-				padding-left: 20px;
-				&:before {
-					content: "\f2c0";
-					font-family: FontAwesome;
-					font-style: normal;
-					font-weight: normal;
-					position: absolute;
-					left: 0;
-				}
+//				position: relative;
+//				padding-left: 20px;
+//				&:before {
+//					content: "\f2c0";
+//					font-family: FontAwesome;
+//					font-style: normal;
+//					font-weight: normal;
+//					position: absolute;
+//					left: 0;
+//				}
 			}
 		}
     }

@@ -948,7 +948,7 @@ ul.pen-list li:before {
 }
 #member-section {
   background: #f5f5f5;
-  margin-top: 40px;
+  margin-top: 10px;
   margin-bottom: 40px;
 }
 #member-section .container {
@@ -968,6 +968,8 @@ ul.pen-list li:before {
 }
 #member-section .btn {
   width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 #member-section #add-creditcard, #member-section #change-creditcard {
   padding: 20px 0;
@@ -1067,6 +1069,11 @@ ul.pen-list li:before {
 #member-section .table th, #member-section .table td {
   text-align: center;
 }
+#member-section p.note {
+  text-align: left;
+  display: block;
+  margin: 0;
+}
 #member-section #auto-payment {
   background: #f6f6f6;
   padding: 20px;
@@ -1079,20 +1086,12 @@ ul.pen-list li:before {
   width: inherit;
   margin: 0;
 }
-#member-section #auto-payment p.note {
-  text-align: left;
-  display: block;
-}
 #member-section #current-plan {
   padding-top: 50px;
 }
 #member-section #current-plan .btn {
   width: 40%;
   margin: 0;
-}
-#member-section #current-plan p.note {
-  display: block;
-  text-align: left;
 }
 #member-section #current-plan p.note.inline {
   line-height: 40px;
@@ -1109,6 +1108,20 @@ ul.pen-list li:before {
 }
 #member-section #payment-history {
   padding-top: 50px;
+}
+@media only screen and (max-width: 767px) {
+  #member-section #auto-payment .form-group .btn {
+    width: 100%;
+  }
+  #member-section .container > .row {
+    margin: 0;
+    padding: 0 10px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #member-section .container .col-xs-6 {
+    width: 100%;
+  }
 }
 
 .footer-sticky {
@@ -1757,7 +1770,6 @@ label[for="arrow"] span {
 @media only screen and (max-width: 768px) {
   .container {
     max-width: 750px;
-    width: 750px;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -1837,18 +1849,7 @@ label[for="arrow"] span {
 }
 .top-nav-right .top-member-nav a {
   color: #111;
-}
-.top-nav-right .top-member-nav a span {
-  position: relative;
-  padding-left: 20px;
-}
-.top-nav-right .top-member-nav a span:before {
-  content: "\f2c0";
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  position: absolute;
-  left: 0;
+  padding: 10px 6px;
 }
 
 #sidebar-nav .sidebar-menu li a {
