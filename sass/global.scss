@@ -118,8 +118,6 @@ hr.page {
 	@include respond-to (only-device){
 		.carousel {
 			width: 100%;
-			blockquote {
-			}
 		}
 	}
 .carousel {
@@ -141,6 +139,12 @@ hr.page {
             	content: ('\2500');
             	padding-right: 8px;
             }
+        }
+    }
+    blockquote {
+        padding-left: 40px;
+        &:before {
+            left: 0;
         }
     }
     @include respond-to (only-device){
@@ -2106,4 +2110,22 @@ strong {
 }
 .page-numbers {
 	padding-left: 0;
+}
+#sidebar-nav .sidebar-menu li a .indicator {
+    display: none;
+    
+}
+#sidebar-nav .sidebar-menu li.menu-item-has-children > a {
+    &:after {
+        color: $gray-green;
+            content: "\f107";
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            padding-right: 6px;
+            position: absolute;
+            font-size: 12px;
+            right: 12px;
+            top: 10px;
+    }
 }
