@@ -132,7 +132,7 @@ hr.page {
   text-align: center;
 }
 .carousel p {
-  font-size: 16px;
+  font-size: 18px;
 }
 .carousel p.reader {
   text-align: right;
@@ -233,7 +233,7 @@ input[type='text'], input[type='password'] {
 }
 .item_number li, .item_disc li {
   list-style-type: decimal;
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 8px;
 }
 
@@ -293,7 +293,7 @@ ul, li {
   padding: 0;
   -webkit-padding-start: 0;
   list-style: none;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 ul {
@@ -329,7 +329,7 @@ blockquote {
   padding-left: 80px;
   position: relative;
   border: 0;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.85 !important;
   text-align: left;
   font-style: italic;
@@ -340,7 +340,7 @@ blockquote {
 blockquote p {
   text-align: left;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 18px;
   font-style: italic;
   line-height: 1.85 !important;
 }
@@ -407,7 +407,7 @@ blockquote:before {
 }
 @media only screen and (max-width: 767px) {
   .note {
-    font-size: 12px;
+    padding: 0 20px;
   }
 }
 
@@ -557,13 +557,13 @@ figure figcaption a:hover {
     font-size: 30px;
   }
   #member-section h3, #section-1 h3, #section-2 h3, #section-3 h3, #section-4 h3, #section-5 h3, #section-6 h3, #section-7 h3 {
-    font-size: 20px;
+    font-size: 22px;
   }
   #member-section h4, #section-1 h4, #section-2 h4, #section-3 h4, #section-4 h4, #section-5 h4, #section-6 h4, #section-7 h4 {
-    font-size: 18px;
+    font-size: 20px;
   }
   #member-section h5, #section-1 h5, #section-2 h5, #section-3 h5, #section-4 h5, #section-5 h5, #section-6 h5, #section-7 h5 {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -587,7 +587,7 @@ ul.pen-list {
   margin: 0 auto;
 }
 ul.pen-list li {
-  font-size: 16px;
+  font-size: 18px;
   text-align: left;
   position: relative;
   padding-left: 20px;
@@ -628,7 +628,7 @@ ul.pen-list li:before {
   margin: 0;
 }
 #section-2 blockquote p {
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 4px;
 }
 #section-2 blockquote:before {
@@ -769,7 +769,7 @@ ul.pen-list li:before {
   line-height: 1.2;
 }
 #section-5 .plan a > span:nth-of-type(2) span {
-  font-size: 16px;
+  font-size: 18px;
   display: block;
 }
 @media only screen and (min-width: 769px) {
@@ -791,7 +791,7 @@ ul.pen-list li:before {
     line-height: 1.2;
   }
   #section-5 .col-sm-4:nth-of-type(2) .plan a > span:nth-of-type(2) span {
-    font-size: 16px;
+    font-size: 18px;
     display: block;
   }
 }
@@ -895,6 +895,7 @@ ul.pen-list li:before {
 }
 #section-7 p.note {
   margin-top: -10px;
+  clear: both;
 }
 @media only screen and (max-width: 767px) {
   #section-7 {
@@ -1062,6 +1063,11 @@ ul.pen-list li:before {
   box-shadow: none;
   outline: none;
   padding: 10px;
+}
+#member-section #member-info span.note {
+  font-size: 12px;
+  margin: 6px 0;
+  color: #666;
 }
 #member-section .note {
   padding: 0;
@@ -1564,6 +1570,11 @@ label[for="arrow"] span {
 .sidebar-open .list-layout .post-header h2 a {
   font-size: 40px !important;
 }
+@media only screen and (max-width: 480px) {
+  .sidebar-open .list-layout .post-header h2 a {
+    font-size: 30px !important;
+  }
+}
 
 .post-header h1, .post-header h2 {
   width: 100%;
@@ -1714,7 +1725,7 @@ label[for="arrow"] span {
 }
 
 .post-tags {
-  padding: 10px 0;
+  padding: 0;
   font-style: normal;
   font-size: 14px;
   float: none;
@@ -1757,18 +1768,43 @@ label[for="arrow"] span {
 .post-tags a:hover {
   color: #FFEC50 !important;
 }
+@media only screen and (max-width: 767px) {
+  .post-tags {
+    margin-bottom: 20px;
+  }
+  .post-tags a {
+    display: none;
+  }
+  .post-tags a:nth-of-type(1), .post-tags a:nth-of-type(2), .post-tags a:nth-of-type(3) {
+    display: inline-block;
+  }
+  .single-post .post-tags a {
+    display: inline-block;
+  }
+}
 
 .list-layout .post-entry-bottom:not(.full) a.custom-more-link {
   float: right;
 }
 
 .list-layout .post-list-text-content .post-entry-bottom {
-  margin-top: 30px;
+  margin-top: 40px;
+}
+@media only screen and (max-width: 767px) {
+  .list-layout .post-list-text-content .post-entry-bottom {
+    margin-top: 10px;
+  }
 }
 
 .post-entry-bottom {
   padding: 0;
   border: 0;
+  margin-top: 40px;
+}
+@media only screen and (max-width: 767px) {
+  .post-entry-bottom {
+    margin-top: 10px;
+  }
 }
 
 .post-entry-bottom a.custom-more-link {
@@ -2181,13 +2217,13 @@ div.member-only a span {
 }
 
 .carousel p {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .carousel p.reader {
   text-align: right;
   padding-left: 20px;
-  font-size: 15px;
+  font-size: 16px;
   color: #666;
   font-style: italic;
 }

@@ -128,7 +128,7 @@ hr.page {
     	text-align: center;
     }
     p {
-        font-size: 16px;
+        font-size: 18px;
         &.reader {
 			text-align: right;
             padding-left: 20px;
@@ -256,7 +256,7 @@ input[type='text'], input[type='password'] {
     padding: 5px 20px;
     li {
         list-style-type: decimal;
-        font-size: 16px;
+        font-size: 18px;
         margin-bottom: 8px;
     }
 }
@@ -304,7 +304,7 @@ ul, li {
 	padding: 0;
 	-webkit-padding-start: 0;
 	list-style: none;
-    font-size: 16px;
+    font-size: 18px;
 }
 ul {
     padding-left: 30px;
@@ -336,7 +336,7 @@ blockquote {
 	padding-left: 80px;
 	position: relative;
 	border: 0;
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 1.85!important;
     text-align: left;
     font-style: italic;
@@ -346,7 +346,7 @@ blockquote {
 	p {
 		text-align: left;
 		font-weight: normal;
-		font-size: 16px;
+		font-size: 18px;
 		font-style: italic;
 		line-height: 1.85!important;
 		&:after {
@@ -409,7 +409,8 @@ blockquote {
 	margin: 20px 0;
 	padding: 0 80px;
 	@include respond-to (only-mobile){
-		font-size: 12px;
+//		font-size: 12px;
+        padding: 0 20px;
 	}
 }
 .link {
@@ -564,13 +565,13 @@ figure {
             font-size: 30px;
         }
         h3 {
-            font-size: 20px;
+            font-size: 22px;
         }
         h4 {
-            font-size: 18px;
+            font-size: 20px;
         }
 		h5 {
-			font-size: 16px;
+			font-size: 18px;
 		}
     }
 }
@@ -589,7 +590,7 @@ ul.pen-list {
 //		width: 76%;
     margin: 0 auto;
     li {
-        font-size: 16px;
+        font-size: 18px;
         text-align: left;
         position: relative;
         padding-left: 20px;
@@ -627,7 +628,7 @@ ul.pen-list {
     blockquote {
         margin: 0;
         p {
-            font-size: 16px;
+            font-size: 18px;
             margin-bottom: 4px;
         }
     }
@@ -779,7 +780,7 @@ ul.pen-list {
 					font-size: 40px;
 					line-height: 1.2;
 					span {
-						font-size: 16px;
+						font-size: 18px;
 						display: block;
 					}
 				}
@@ -805,7 +806,7 @@ ul.pen-list {
 							font-size: 60px;
 							line-height: 1.2;
 							span {
-								font-size: 16px;
+								font-size: 18px;
 								display: block;
 							}
 						}
@@ -935,6 +936,7 @@ ul.pen-list {
 	}
 	p.note {
 		margin-top: -10px;
+        clear: both;
 	}
 	@include respond-to (only-mobile){
 		padding: 30px;
@@ -1113,6 +1115,11 @@ ul.pen-list {
 					padding: 10px;
 				}
 			}
+        }
+        span.note {
+            font-size: 12px;
+            margin: 6px 0;
+            color: $gray;
         }
 	}
     .note {
@@ -1601,6 +1608,9 @@ label[for="arrow"] {
 //}
 .sidebar-open .list-layout .post-header h2 a {
 	font-size: 40px!important;
+    @include respond-to (normal-mobile){
+		font-size: 30px!important;
+    }
 }
 .post-header h1, .post-header h2 {
 	width: 100%;
@@ -1759,7 +1769,7 @@ label[for="arrow"] {
     }
 }
 .post-tags {
-	padding: 10px 0;
+	padding: 0;
 //	margin-left: 20px;
 	font-style: normal;
 	font-size: 14px;
@@ -1802,17 +1812,36 @@ label[for="arrow"] {
     a:hover {
         color: $yellow!important;
     }
-	
+	@include respond-to (only-mobile){
+        margin-bottom: 20px;
+        a {
+            display: none;
+            &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3) {
+                display: inline-block;
+            }
+            .single-post & {
+                display: inline-block;
+            }
+        }
+        
+	}
 }
 .list-layout .post-entry-bottom:not(.full) a.custom-more-link {
 	float: right;
 }
 .list-layout .post-list-text-content  .post-entry-bottom {
-	margin-top: 30px;
+	margin-top: 40px;
+    @include respond-to (only-mobile){
+        margin-top: 10px;
+    }
 }
 .post-entry-bottom {
     padding: 0;
     border: 0;
+    margin-top: 40px;
+    @include respond-to (only-mobile){
+        margin-top: 10px;
+    }
 }
 .post-entry-bottom a.custom-more-link {
 	font-size: 15px;
@@ -2201,12 +2230,12 @@ div.member-only {
   text-align: center;
 }
 .carousel p {
-  font-size: 16px;
+  font-size: 18px;
 }
 .carousel p.reader {
   text-align: right;
   padding-left: 20px;
-  font-size: 15px;
+  font-size: 16px;
   color: #666;
   font-style: italic;
 }
