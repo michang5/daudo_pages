@@ -142,6 +142,7 @@ hr.page {
         }
     }
     blockquote {
+		margin: 30px 0;
         padding-left: 40px;
         &:before {
             left: 0;
@@ -150,6 +151,14 @@ hr.page {
     @include respond-to (only-device){
         width: 90%;
         margin: 30px auto 0;
+		blockquote {
+			margin: 20px 0;
+			padding-left: 37px;
+			&:before {
+				content: url('../images/quote_50.png');
+				left: -12px;
+			}
+		}
     }
     @include respond-to (normal-mobile){
         width: 95%;
@@ -257,13 +266,13 @@ input[type='text'], input[type='password'] {
     }
 }
 p, .list-layout .post p {
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: normal;
 	margin-bottom: 0;
 	color: $dark-gray;
 	margin: 0 0 20px;
 	line-height: 1.85;
-    letter-spacing: -.01em;
+//    letter-spacing: -.01em;
 //	text-align: justify;
     a {
         border: 0;
@@ -323,7 +332,7 @@ hr {
 	background-size: 220px;
 }
 blockquote {
-	margin: 30px 0;
+	margin: -10px 0 10px;
 	padding-left: 80px;
 	position: relative;
 	border: 0;
@@ -357,7 +366,7 @@ blockquote {
 	}
 	@include respond-to (only-device){
 		margin: 20px 0;
-		padding-left: 36px;
+		padding-left: 37px;
 		&:before {
 			content: url('../images/quote_50.png');
 			left: -12px;
@@ -399,6 +408,9 @@ blockquote {
 	display: block;
 	margin: 20px 0;
 	padding: 0 80px;
+	@include respond-to (only-mobile){
+		font-size: 12px;
+	}
 }
 .link {
     text-decoration: underline;
@@ -434,8 +446,16 @@ blockquote {
         margin: 0;
         padding: 0;
     }
+	.col-sm-3 {
+		img {
+			box-shadow: 4px 4px 0 $yellow;
+			margin: 6px auto 0;
+		}
+	}
     @include respond-to (only-device){
-        margin-top: 40px;
+       .container {
+		   margin-top: 30px;
+		}
     }
     @include respond-to (normal-mobile){
 		.col-sm-3 {
@@ -467,7 +487,9 @@ blockquote {
 figure {
     margin: 30px 50px;
     img {
-        width: 100%;
+        width: auto;
+		margin: 0 auto!important;
+		max-width: 100%;
     }
     figcaption {
         color: #A9A9A9;
@@ -547,6 +569,9 @@ figure {
         h4 {
             font-size: 18px;
         }
+		h5 {
+			font-size: 16px;
+		}
     }
 }
 #section-1, #section-3 , #section-4, #section-6 {
@@ -729,61 +754,100 @@ ul.pen-list {
     .row {
         padding-top: 20px;
     }
-	.plan a {
-        display: block;
-		margin-top: 20px;
-		margin-bottom: 20px;
-		box-shadow: 0 12px 20px rgba(0,0,0,.1), 0 3px 10px rgba(0,0,0,.1);
-		padding: 16px 20px 26px;
-		text-align: center;
-		border-radius: 0 0 3px 3px;
-        border-radius: 50%;
-        width: 160px;
-        height: 160px;
-        margin: 0 auto;
-		background: $yellow;
-        font-size: 15px;
-        color: $dark-gray;
-//		color: $yellow;
-//		background-image: linear-gradient( rgba($light-gray, 0) 90%, $light-gray 91% );
+	.plan {
+		a {
+			display: block;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			box-shadow: 0 12px 20px rgba(0,0,0,.1), 0 3px 10px rgba(0,0,0,.1);
+			padding: 16px 20px 26px;
+			text-align: center;
+			border-radius: 0 0 3px 3px;
+			border-radius: 50%;
+			width: 160px;
+			height: 160px;
+			margin: 0 auto;
+			background: $yellow;
+			font-size: 15px;
+			color: $black;
+			>span {
+				display: block;
+				&:nth-of-type(1) {
+					padding-top: 20px;
+				}
+				&:nth-of-type(2) {
+					font-size: 40px;
+					line-height: 1.2;
+					span {
+						font-size: 16px;
+						display: block;
+					}
+				}
+			}
+		}
         vertical-align: bottom;
         margin-top: 30px;
-		>span {
-			display: block;
-            &:nth-of-type(1) {
-                padding-top: 20px;
-            }
-			&:nth-of-type(2) {
-				font-size: 40px;
-                line-height: 1.2;
-				span {
-					font-size: 16px;
-                    display: block;
+		
+	}
+	@include respond-to (only-desktop){
+		.col-sm-4 {
+			padding: 0;
+			&:nth-of-type(2) .plan {
+				margin-top: 0;
+				a {
+					width: 200px;
+					height: 200px;
+					>span {
+						&:nth-of-type(1) {
+							padding-top: 20px;
+						}
+						&:nth-of-type(2) {
+							font-size: 60px;
+							line-height: 1.2;
+							span {
+								font-size: 16px;
+								display: block;
+							}
+						}
+					}
 				}
 			}
 		}
 	}
-    .col-sm-4 {
-        padding: 0;
-        &:nth-of-type(2) .plan {
-            margin-top: 0;
-            width: 200px;
-            height: 200px;
-            >span {
-                &:nth-of-type(1) {
-                    padding-top: 30px;
-                }
-                &:nth-of-type(2) {
-                    font-size: 60px;
-                    line-height: 1.2;
-                    span {
-                        font-size: 16px;
-                        display: block;
-                    }
-                }
-            }
-        }
-    }
+	@include respond-to (only-device){
+		width: 90%;
+	}
+	@include respond-to (only-mobile){
+		.plan {
+			margin-top: 10px;
+			a {
+				>span {
+					&:nth-of-type(2) {
+						font-size: 30px;
+					}
+				}
+			}
+		}
+		.col-sm-4 {
+			&:nth-of-type(2) .plan {
+				a {
+					>span {
+						&:nth-of-type(1) {
+							padding-top: 10px;
+						}
+						&:nth-of-type(2) {
+							font-size: 50px;
+							line-height: 1.2;
+							span {
+								font-size: 16px;
+								display: block;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 #section-6 {
 	h4 {
@@ -868,6 +932,12 @@ ul.pen-list {
 			padding: 0 4px;
 			text-decoration: underline;
         }
+	}
+	p.note {
+		margin-top: -10px;
+	}
+	@include respond-to (only-mobile){
+		padding: 30px;
 	}
 }
 .help-inline {
@@ -1257,6 +1327,7 @@ footer {
 	width: 100%;
     padding: 0 20px;
     background: #292929;
+	z-index: 9;
     .col-sm-5 {
         padding-left: 30px;
         padding-right: 30px;
@@ -1301,6 +1372,7 @@ footer {
         }
     }
     .footer_nav {
+		padding-left: 0;
         li {
             display: inline-block;
             padding-right: 10px;
@@ -1527,13 +1599,15 @@ label[for="arrow"] {
 //.sidebar-open .list-layout .post-header h2 a {
 //	font-size: 32px;
 //}
-
+.sidebar-open .list-layout .post-header h2 a {
+	font-size: 40px!important;
+}
 .post-header h1, .post-header h2 {
 	width: 100%;
-	font-size: 40px;
+	font-size: 40px!important;
     line-height: 1.2;
 	.sidebar-open & {
-		font-size: 40px;
+		font-size: 40px!important;
 	}
 	@include respond-to (normal-mobile){
 		font-size: 30px!important;
@@ -1634,8 +1708,10 @@ label[for="arrow"] {
 .post-header .cat {
 	margin: 0;
 	line-height: 40px;
-	vertical-align: top;
-	display: inline-block;
+	vertical-align: middle;
+//	display: inline-block;
+	font-size: 13px;
+	display: none;
 	a {
 		text-decoration: underline;
 //		&:after {
@@ -1645,7 +1721,7 @@ label[for="arrow"] {
 	}
 }
 .issue {
-	font-size: 26px;
+	font-size: 22px;
 	font-family: 'Roboto', 'Arial', sans-serif;
 	color: $dark-gray;
 	line-height: 40px;
@@ -1656,24 +1732,25 @@ label[for="arrow"] {
 }
 .date-author p span.date {
 	color: #666!important;
-	font-size: 15px;
+//	font-size: 13px;
 }
+.date-author {
+//	color: #666!important;
+//	font-size: 16px;
+	font-family: 'Roboto', 'Arial', sans-serif;
+}
+
 .like-comment-buttons-wrapper {
 	display: none;
 }
 //.list-layout .post p {
 //	font-size: 18px;
 //}
-.date-author .date {
-	color: #666!important;
-	font-size: 15px;
-	margin-right: 10px;
-	font-family: 'Roboto', 'Arial', sans-serif;
-}
+
 .post-entry-text {
     a {
-        border: 0;
-        border: 1px solid $gray-green!important; 
+        border: 0!important;
+//        border: 1px solid $gray-green!important; 
     }
      p {
         a {
@@ -1689,9 +1766,10 @@ label[for="arrow"] {
 	float: none;
 	display: inline-block;
     width: inherit;
+	vertical-align: top;
     a {
-		line-height: 28px;
-		color: $gray-green;
+		line-height: 20px;
+		color: #669ea9;
 		border-radius: 0 5px 0 0;
    	 	border: 1px solid $gray-green;
 		font-size: 13px!important;
@@ -1700,6 +1778,7 @@ label[for="arrow"] {
         margin-bottom: 6px;
         padding: 3px 10px;
         display: inline-block;
+		border: 1px solid #669ea9!important; 
 		&:hover {
 			border-color: $gray-green;
 			background: $gray-green;
@@ -1728,6 +1807,9 @@ label[for="arrow"] {
 .list-layout .post-entry-bottom:not(.full) a.custom-more-link {
 	float: right;
 }
+.list-layout .post-list-text-content  .post-entry-bottom {
+	margin-top: 30px;
+}
 .post-entry-bottom {
     padding: 0;
     border: 0;
@@ -1735,6 +1817,15 @@ label[for="arrow"] {
 .post-entry-bottom a.custom-more-link {
 	font-size: 15px;
     float: right;
+	color: $dark-gray;
+	&:hover, &:focus {
+		background: $yellow;
+		border: 1px solid $yellow;
+		@include respond-to (only-mobile){
+//			background: $white;
+//			border: 1px solid #CECECE;
+		}
+	}
 }
 
 .post-entry-bottom a.custom-more-link:after {
@@ -1743,8 +1834,7 @@ label[for="arrow"] {
 	padding-left: 40px;
 }
 .post-entry-bottom a.custom-more-link:hover {
-	background: $yellow;
-	border: 1px solid $yellow;
+	
 }
 .essb_links {
 	display: none;
@@ -1753,7 +1843,19 @@ label[for="arrow"] {
 	float: none;
 	line-height: 40px;
 	padding: 0 10px;
-    margin-top: 0;
+    margin-top: 0!important;
+	vertical-align: middle;
+//	font-style: normal;
+//	font-size: 16px;
+}
+.list-layout .post-list-text-content .post-header .date-author {
+	margin-top: 0;
+}
+.list-layout .post-list-text-content .post-header .date {
+	font-style: normal;
+}
+.list-layout .post-list-text-content  .post-header  p, .list-layout .post-list-text-content .post-header .date {
+	font-size: 13px!important;
 }
 .post-header {
 	text-align: left;
@@ -1779,6 +1881,9 @@ label[for="arrow"] {
 }
 @media only screen and (min-width: 1200px) {
 	.single-post .container {
+		width: 830px!important;
+	}
+	.page .container {
 		width: 830px!important;
 	}
     .container {
@@ -2014,6 +2119,12 @@ div.member-only {
     .btn {
         margin: 0 auto;
     }
+	a {
+		text-decoration: underline;
+		span {
+			background: none;
+		}
+	}
 }
 #sidebar-nav-logo:before {
     background: none;
@@ -2128,4 +2239,15 @@ strong {
             right: 12px;
             top: 10px;
     }
+}
+body.login div#login h1 a {
+	width: 320px!important;
+}
+//.aligncenter, div.aligncenter {
+//	margin: 0!important;
+//}
+
+.shop-icon-count, .main-navigation .nav-menu > li.current_page_item > a:after, .main-navigation .nav-menu li.current-menu-item > a:after {
+	content: ('');
+	background: none!important;
 }
