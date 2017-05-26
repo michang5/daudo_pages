@@ -163,6 +163,9 @@ hr.page {
     @include respond-to (normal-mobile){
         width: 95%;
         margin: 10px auto 0;
+		 p {
+			 font-size: 16px;
+		}
     }
 }	
 //input style 
@@ -364,9 +367,17 @@ blockquote {
 		left: 30px;
 		top: 14px;
 	}
+	@include respond-to (only-mobile){
+		p {
+			font-size: 16px;
+			line-height: 1.75;
+			font-style: normal;
+		}
+	}
 	@include respond-to (only-device){
 		margin: 20px 0;
 		padding-left: 37px;
+		
 		&:before {
 			content: url('../images/quote_50.png');
 			left: -12px;
@@ -2144,6 +2155,7 @@ div.member-only {
     padding-bottom: 50px;
     padding-top: 30px;
     margin-top: 30px;
+	margin-bottom: 30px;
     background: #fafafa;
     .btn {
         margin: 0 auto;
@@ -2229,9 +2241,9 @@ div.member-only {
 .carousel .item {
   text-align: center;
 }
-.carousel p {
-  font-size: 18px;
-}
+//.carousel p {
+//  font-size: 18px;
+//}
 .carousel p.reader {
   text-align: right;
   padding-left: 20px;
