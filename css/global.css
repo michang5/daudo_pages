@@ -578,7 +578,7 @@ figure figcaption a:hover {
 }
 
 #section-1, #section-3, #section-4, #section-6 {
-  width: 76%;
+  width: 95%;
   margin: 0 auto;
 }
 @media only screen and (max-width: 768px) {
@@ -612,11 +612,11 @@ ul.pen-list li:before {
   position: absolute;
   font-size: 12px;
   left: 2px;
-  top: 3px;
+  top: 6px;
 }
 
 #section-1 {
-  padding-bottom: 0;
+  padding-bottom: 50px;
 }
 #section-1 h2 {
   margin-bottom: 30px;
@@ -640,6 +640,9 @@ ul.pen-list li:before {
 #section-2 blockquote p {
   font-size: 18px;
   margin-bottom: 4px;
+}
+#section-2 .carousel {
+  width: 80%;
 }
 #section-2 blockquote:before {
   top: 8px;
@@ -742,7 +745,7 @@ ul.pen-list li:before {
 }
 
 #section-5 {
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
 }
 #section-5 .row {

@@ -587,7 +587,7 @@ figure {
     }
 }
 #section-1, #section-3 , #section-4, #section-6 {
-    width: 76%;
+    width: 95%;
     margin: 0 auto;
     @include respond-to (only-device){
 		width: 95%;
@@ -615,12 +615,12 @@ ul.pen-list {
             position: absolute;
             font-size: 12px;
             left: 2px;
-            top: 3px;
+            top: 6px;
         }
     }
 }
 #section-1 {
-	padding-bottom: 0;
+	padding-bottom: 50px;
     h2 {
 		margin-bottom: 30px;
 	}
@@ -643,6 +643,9 @@ ul.pen-list {
             margin-bottom: 4px;
         }
     }
+	.carousel{
+		width: 80%;
+	}
 	blockquote:before {
 		top: 8px;
 	}
@@ -761,7 +764,7 @@ ul.pen-list {
 	}
 }
 #section-5 {
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
     .row {
         padding-top: 20px;
