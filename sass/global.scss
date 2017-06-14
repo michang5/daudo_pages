@@ -20,7 +20,7 @@ body, html {
 	margin: 0;
 }
 body {
-	font-family: 'Roboto', "source-han-sans-traditional", sans-serif, "Microsoft JhengHei";
+	font-family: 'Roboto', "source-han-sans-traditional", sans-serif, "Microsoft JhengHei"!important;
 	word-wrap: break-word;
 	word-break: normal;
 	line-height: 1.8;
@@ -46,9 +46,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
     font-size: 48px;
+    font-weight: 700;
 }
 h2 {
     font-size: 40px;
+    font-weight: 700;
 }
 h3 {
     font-size: 32px;
@@ -352,6 +354,7 @@ blockquote {
 		font-size: 18px;
 		font-style: italic;
 		line-height: 1.85!important;
+        font-family: 'Roboto', "source-han-sans-traditional", sans-serif, "Microsoft JhengHei"!important;
 		&:after {
 			border-bottom: 0;
 		}
@@ -2187,7 +2190,7 @@ div.member-only {
     position: absolute;
     bottom: 10px;
     left: 50%;
-    z-index: 15;
+    z-index: 9;
     width: 60%;
     padding-left: 0;
     margin-left: -30%;
@@ -2294,4 +2297,10 @@ body.login div#login h1 a {
 .shop-icon-count, .main-navigation .nav-menu > li.current_page_item > a:after, .main-navigation .nav-menu li.current-menu-item > a:after {
 	content: ('');
 	background: none!important;
+}
+
+.main-navigation .nav-menu > li > a, .main-navigation .nav-menu a, .secondary-navigation .nav-menu > li > a, .secondary-navigation .nav-menu a, .secondary-navigation .nav-menu > ul > li > a {
+    font-family: 'Roboto', "source-han-sans-traditional", sans-serif, "Microsoft JhengHei"!important;
+    font-weight: 500!important;
+    
 }
