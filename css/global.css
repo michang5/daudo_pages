@@ -319,10 +319,10 @@ footer ul {
   }
 }
 
-.article-item ul li, .page-template-default ul li {
+.article-item ul li, .page-template-default #main-container ul li {
   list-style: disc;
 }
-.article-item ol li, .page-template-default ol li {
+.article-item ol li, .page-template-default #main-container ol li {
   list-style: decimal;
 }
 
