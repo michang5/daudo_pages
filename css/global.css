@@ -77,10 +77,11 @@ h1:before, h1:after, h2:before, h2:after {
 hr.page {
   display: block;
   border: 1px;
-  height: 64px;
+  height: 65px;
   margin: 40px 0;
   clear: both;
   background: url(../images/line_page.png) no-repeat top center;
+  background-size: contain;
 }
 
 .morning {
@@ -264,6 +265,9 @@ p .more, .list-layout .post p .more {
   font-size: 14px;
   text-decoration: underline;
 }
+p:nth-last-of-type(1), .list-layout .post p:nth-last-of-type(1) {
+  margin-bottom: 40px;
+}
 @media only screen and (max-width: 767px) {
   p, .list-layout .post p {
     font-size: 16px;
@@ -343,7 +347,6 @@ blockquote {
   font-size: 18px;
   line-height: 1.85 !important;
   text-align: left;
-  font-style: italic;
 }
 .member_plan blockquote {
   font-style: normal !important;
@@ -352,7 +355,6 @@ blockquote p {
   text-align: left;
   font-weight: normal;
   font-size: 18px;
-  font-style: italic;
   line-height: 1.85 !important;
   font-family: "Roboto", "source-han-sans-traditional", sans-serif, "Microsoft JhengHei" !important;
 }
@@ -370,6 +372,14 @@ blockquote:before {
   left: 30px;
   top: 14px;
 }
+.single-post blockquote {
+  padding-left: 10px 30px;
+  border-left: 3px solid #FFEC50;
+  background-color: #F5F5F5;
+}
+.single-post blockquote:before {
+  background: none !important;
+}
 @media only screen and (max-width: 767px) {
   blockquote p {
     font-size: 16px;
@@ -386,6 +396,10 @@ blockquote:before {
     content: url("../images/quote_50.png");
     left: -12px;
   }
+}
+
+.super {
+  vertical-align: super;
 }
 
 .alert-dismissable .close, .alert-dismissible .close {
@@ -441,6 +455,9 @@ blockquote:before {
   line-height: 40px;
 }
 
+#member_plan h3 {
+  font-weight: normal;
+}
 #member_plan hr.page {
   margin: -20px 0 40px;
 }
@@ -463,8 +480,8 @@ blockquote:before {
   padding: 0;
 }
 #member_plan .col-sm-3 img {
-  box-shadow: 4px 4px 0 #FFEC50;
-  margin: 6px auto 0;
+  box-shadow: 0 0 0 5px #f1f1f1;
+  margin: 6px auto 30px;
 }
 @media only screen and (max-width: 768px) {
   #member_plan .container {
@@ -540,6 +557,7 @@ figure figcaption a:hover {
 #member-section h3, #section-1 h3, #section-2 h3, #section-3 h3, #section-4 h3, #section-5 h3, #section-6 h3, #section-7 h3 {
   font-size: 32px;
   color: #438894;
+  margin-bottom: 15px;
 }
 #member-section h3 span, #section-1 h3 span, #section-2 h3 span, #section-3 h3 span, #section-4 h3 span, #section-5 h3 span, #section-6 h3 span, #section-7 h3 span {
   background-image: linear-gradient(rgba(255, 236, 80, 0) 64%, #ffec50 65%);
@@ -582,7 +600,8 @@ figure figcaption a:hover {
     font-size: 20px;
   }
   #member-section h5, #section-1 h5, #section-2 h5, #section-3 h5, #section-4 h5, #section-5 h5, #section-6 h5, #section-7 h5 {
-    font-size: 18px;
+    font-size: 15px;
+    line-height: 1.5;
   }
 }
 
@@ -613,7 +632,7 @@ ul.pen-list li {
 }
 ul.pen-list li:before {
   color: #438894;
-  content: "\f040";
+  content: "\f00c";
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
@@ -661,6 +680,11 @@ ul.pen-list li:before {
     padding-bottom: 10px;
   }
 }
+@media only screen and (max-width: 767px) {
+  #section-2 .carousel {
+    width: 100%;
+  }
+}
 
 #section-3 {
   padding-bottom: 0;
@@ -706,16 +730,20 @@ ul.pen-list li:before {
 #section-3, #section-4 {
   text-align: center;
 }
-#section-3 ul.pen-list, #section-4 ul.pen-list {
-  padding-top: 20px;
+#section-3 ul.pen-list li, #section-4 ul.pen-list li {
+  margin-bottom: 6px;
 }
 #section-3 .small, #section-4 .small {
   text-align: left;
   padding-bottom: 30px;
   padding-left: 20px;
+  font-size: 13px;
 }
 #section-3 .small span, #section-4 .small span {
   padding-right: 12px;
+}
+#section-3 .small span span, #section-4 .small span span {
+  padding-right: 2px;
 }
 @media only screen and (max-width: 768px) {
   #section-3 ul.pen-list, #section-4 ul.pen-list {
@@ -725,6 +753,9 @@ ul.pen-list li:before {
 @media only screen and (max-width: 480px) {
   #section-3 ul.pen-list, #section-4 ul.pen-list {
     width: 100%;
+  }
+  #section-3 .small > span, #section-4 .small > span {
+    display: block;
   }
 }
 
@@ -757,19 +788,25 @@ ul.pen-list li:before {
   width: 90%;
   margin: 0 auto;
 }
-#section-5 .row {
-  padding-top: 20px;
+#section-5 h2 {
+  margin-bottom: 30px;
+}
+#section-5 .row .col-xs-4:nth-of-type(1) a {
+  float: right;
+}
+#section-5 .row .col-xs-4:nth-of-type(3) a {
+  float: left;
 }
 #section-5 .plan {
   vertical-align: bottom;
-  margin-top: 30px;
+  margin-top: 43px;
 }
 #section-5 .plan a {
   display: block;
   margin-top: 20px;
   margin-bottom: 20px;
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.1);
-  padding: 16px 20px 26px;
+  padding: 8px 20px 26px;
   text-align: center;
   border-radius: 0 0 3px 3px;
   border-radius: 50%;
@@ -779,42 +816,59 @@ ul.pen-list li:before {
   background: #FFEC50;
   font-size: 15px;
   color: #111;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Helvetica', 'Arial', sans-serif;
 }
 #section-5 .plan a > span {
   display: block;
+}
+#section-5 .plan a > span.save {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  background: #438894;
+  color: #fff;
+  margin-top: 10px;
+  font-size: 14px;
 }
 #section-5 .plan a > span:nth-of-type(1) {
   padding-top: 20px;
 }
 #section-5 .plan a > span:nth-of-type(2) {
   font-size: 40px;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 #section-5 .plan a > span:nth-of-type(2) span {
   font-size: 18px;
   display: block;
 }
 @media only screen and (min-width: 769px) {
-  #section-5 .col-sm-4 {
+  #section-5 .col-xs-4 {
     padding: 0;
   }
-  #section-5 .col-sm-4:nth-of-type(2) .plan {
+  #section-5 .col-xs-4:nth-of-type(2) .plan {
     margin-top: 0;
   }
-  #section-5 .col-sm-4:nth-of-type(2) .plan a {
+  #section-5 .col-xs-4:nth-of-type(2) .plan a {
     width: 200px;
     height: 200px;
   }
-  #section-5 .col-sm-4:nth-of-type(2) .plan a > span:nth-of-type(1) {
-    padding-top: 20px;
+  #section-5 .col-xs-4:nth-of-type(2) .plan a > span:nth-of-type(1) {
+    padding-top: 32px;
   }
-  #section-5 .col-sm-4:nth-of-type(2) .plan a > span:nth-of-type(2) {
+  #section-5 .col-xs-4:nth-of-type(2) .plan a > span:nth-of-type(2) {
     font-size: 60px;
     line-height: 1.2;
   }
-  #section-5 .col-sm-4:nth-of-type(2) .plan a > span:nth-of-type(2) span {
+  #section-5 .col-xs-4:nth-of-type(2) .plan a > span:nth-of-type(2) span {
     font-size: 18px;
     display: block;
+  }
+  #section-5 .col-xs-4:nth-of-type(3) .plan a > span.save {
+    margin-top: 7px;
+    padding: 2px 0;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -823,11 +877,24 @@ ul.pen-list li:before {
   }
 }
 @media only screen and (max-width: 767px) {
+  #section-5 .col-xs-4 {
+    padding: 0 4px;
+  }
   #section-5 .plan {
     margin-top: 10px;
   }
+  #section-5 .plan a {
+    padding: 4px 0 0;
+    border-radius: 6px;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+  }
   #section-5 .plan a > span:nth-of-type(2) {
-    font-size: 30px;
+    font-size: 28px;
+  }
+  #section-5 .plan a > span.save {
+    padding: 0;
   }
   #section-5 .col-sm-4:nth-of-type(2) .plan a > span:nth-of-type(1) {
     padding-top: 10px;
@@ -842,29 +909,61 @@ ul.pen-list li:before {
   }
 }
 
+#section-6 .col-sm-4 {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+#section-6 h2 {
+  margin-bottom: 30px;
+}
 #section-6 h4 {
-  line-height: 1;
+  padding-left: 50px;
+  font-size: 24px;
+  line-height: 1.75 !important;
+}
+#section-6 hr:nth-of-type(2) {
+  margin: 40px 0 0;
 }
 #section-6 .guarantee {
   position: relative;
-  padding-left: 38px;
-  padding-top: 20px;
+  padding: 16px;
+  border: 1px solid #d1d1d1;
+  border-radius: 6px;
+}
+#section-6 .guarantee p {
+  font-size: 16px;
+  margin-bottom: 0 !important;
 }
 #section-6 .guarantee .number {
   font-size: 25px;
   background: #4f7177;
   color: #fff;
-  width: 30px;
-  height: 30px;
-  line-height: 32px;
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 3px;
   text-align: center;
   margin-right: 5px;
   display: block;
   position: absolute;
-  left: 0;
+  left: 16px;
   top: 16px;
-  box-shadow: 0 3px 0 0 #FFE300;
+}
+@media only screen and (min-width: 768px) {
+  #section-6 .row {
+    display: -webkit-flex;
+    display: flex;
+  }
+  #section-6 .row .col-sm-4 {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #section-6 .guarantee {
+    border: 0;
+    padding: 16px 16px 0;
+  }
 }
 
 #section-7 {
@@ -900,8 +999,7 @@ ul.pen-list li:before {
   font-size: 14px;
   line-height: 14px;
   color: #777;
-  padding-top: 40px;
-  border-top: 1px solid #ccc;
+  display: inline-block;
 }
 #section-7 h5 {
   font-weight: normal;

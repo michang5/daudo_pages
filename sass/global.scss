@@ -76,10 +76,11 @@ h1, h2 {
 hr.page {
     display: block;
     border: 1px;
-    height: 64px;
+    height: 65px;
     margin: 40px 0;
     clear: both;
     background: url(../images/line_page.png) no-repeat top center;
+    background-size: contain;
 }
 .morning {
 	width: 90%;
@@ -289,6 +290,9 @@ p, .list-layout .post p {
         font-size: 14px;
         text-decoration: underline;
     }
+    &:nth-last-of-type(1) {
+        margin-bottom: 40px;
+    }
     @include respond-to (only-mobile){
 		font-size: 16px;
         line-height: 1.75;
@@ -350,7 +354,6 @@ blockquote {
 	font-size: 18px;
 	line-height: 1.85!important;
     text-align: left;
-    font-style: italic;
     .member_plan & {
         font-style: normal!important;
     }
@@ -358,7 +361,6 @@ blockquote {
 		text-align: left;
 		font-weight: normal;
 		font-size: 18px;
-		font-style: italic;
 		line-height: 1.85!important;
         font-family: 'Roboto', "source-han-sans-traditional", sans-serif, "Microsoft JhengHei"!important;
 		&:after {
@@ -376,6 +378,14 @@ blockquote {
 		left: 30px;
 		top: 14px;
 	}
+    .single-post & {
+        padding-left: 10px 30px;
+        border-left: 3px solid $yellow;
+        background-color: $light-gray;
+        &:before {
+            background: none!important;
+        }
+    }
 	@include respond-to (only-mobile){
 		p {
 			font-size: 16px;
@@ -393,6 +403,10 @@ blockquote {
 		}
 	}
 }
+.super {
+    vertical-align:super;
+//    padding: 0!important;
+} 
 .alert-dismissable .close, .alert-dismissible .close {
         top: 4px;
     }
@@ -448,6 +462,9 @@ blockquote {
     }
 }
 #member_plan {
+    h3 {
+        font-weight: normal;
+    }
     hr.page {
         margin: -20px 0 40px;
         @include respond-to (only-device){
@@ -469,8 +486,8 @@ blockquote {
     }
 	.col-sm-3 {
 		img {
-			box-shadow: 4px 4px 0 $yellow;
-			margin: 6px auto 0;
+			box-shadow: 0 0 0 5px #f1f1f1;
+			margin: 6px auto 30px;
 		}
 	}
     @include respond-to (only-device){
@@ -544,6 +561,7 @@ figure {
 	h3 {
 		font-size: 32px;
 		color: $gray-green;
+        margin-bottom: 15px;
 		span {
 			background-image: linear-gradient(rgba($yellow, 0) 64% , $yellow 65%);
 		}
@@ -591,7 +609,8 @@ figure {
             font-size: 20px;
         }
 		h5 {
-			font-size: 18px;
+			font-size: 15px;
+            line-height: 1.5;
 		}
     }
 }
@@ -616,7 +635,12 @@ ul.pen-list {
         padding-left: 20px;
         &:before {
             color: $gray-green;
-            content: "\f040";
+//            content: '';
+//            background: url('../images/icon_mountain.png') no-repeat;
+//            background-size: contain;
+//            width: 18px;
+//            height: 18px;
+            content: "\f00c";
             font-family: FontAwesome;
             font-style: normal;
             font-weight: normal;
@@ -672,13 +696,13 @@ ul.pen-list {
 //			border-width: 2px;
 //		}
 //	}
-//	@include respond-to (only-device){
-//		.carousel {
-//			width: 100%;
-//			blockquote {
-//			}
-//		}
-//	}
+	@include respond-to (only-mobile){
+		.carousel {
+			width: 100%;
+			blockquote {
+			}
+		}
+	}
 }
 #section-3 {
 	padding-bottom: 0;
@@ -725,14 +749,22 @@ ul.pen-list {
 #section-3, #section-4 {
 	text-align: center;
     ul.pen-list {
-        padding-top: 20px;
+//        padding-top: 20px;
+        li {
+            margin-bottom: 6px;
+        }
+        
     }
     .small {
         text-align: left;
         padding-bottom: 30px;
         padding-left: 20px;
+        font-size: 13px;
         span {
             padding-right: 12px;
+            span {
+                padding-right: 2px;
+            }
         }
     }
 	@include respond-to (only-device){
@@ -743,7 +775,12 @@ ul.pen-list {
 	@include respond-to (normal-mobile){
 		ul.pen-list {
 			width: 100%;
-		}	
+		}
+        .small {
+            >span {
+                display: block;
+            }
+        }
 	}
 }
 #section-4 {
@@ -775,8 +812,23 @@ ul.pen-list {
 #section-5 {
     width: 90%;
     margin: 0 auto;
+    h2 {
+        margin-bottom: 30px;
+    }
     .row {
-        padding-top: 20px;
+//        padding-top: 20px;
+        .col-xs-4 {
+            &:nth-of-type(1) {
+                a {
+                    float: right;
+                }
+            }
+            &:nth-of-type(3) {
+                a {
+                    float: left;
+                }
+            }
+        }
     }
 	.plan {
 		a {
@@ -784,7 +836,7 @@ ul.pen-list {
 			margin-top: 20px;
 			margin-bottom: 20px;
 			box-shadow: 0 12px 20px rgba(0,0,0,.1), 0 3px 10px rgba(0,0,0,.1);
-			padding: 16px 20px 26px;
+			padding: 8px 20px 26px;
 			text-align: center;
 			border-radius: 0 0 3px 3px;
 			border-radius: 50%;
@@ -794,27 +846,41 @@ ul.pen-list {
 			background: $yellow;
 			font-size: 15px;
 			color: $black;
+            overflow: hidden;
+            position: relative;
+            font-family: 'Helvetica', 'Arial', sans-serif;
 			>span {
 				display: block;
+                &.save {
+                    position: absolute;
+                    bottom: 5px;
+                    left: 0;
+                    width: 100%;
+                    background: $gray-green;
+                    color: $white;
+                    margin-top: 10px;
+                    font-size: 14px;
+                }
 				&:nth-of-type(1) {
 					padding-top: 20px;
 				}
 				&:nth-of-type(2) {
 					font-size: 40px;
-					line-height: 1.2;
+					line-height: 1.1;
 					span {
 						font-size: 18px;
 						display: block;
+                        
 					}
 				}
 			}
 		}
         vertical-align: bottom;
-        margin-top: 30px;
+        margin-top: 43px;
 		
 	}
 	@include respond-to (only-desktop){
-		.col-sm-4 {
+		.col-xs-4 {
 			padding: 0;
 			&:nth-of-type(2) .plan {
 				margin-top: 0;
@@ -823,7 +889,7 @@ ul.pen-list {
 					height: 200px;
 					>span {
 						&:nth-of-type(1) {
-							padding-top: 20px;
+							padding-top: 32px;
 						}
 						&:nth-of-type(2) {
 							font-size: 60px;
@@ -836,19 +902,40 @@ ul.pen-list {
 					}
 				}
 			}
+            &:nth-of-type(3) .plan {
+                a {
+                    >span {
+                        &.save {
+                            margin-top: 7px;
+                            padding: 2px 0;
+                        }
+                    }
+                }
+            }
 		}
 	}
 	@include respond-to (only-device){
 		width: 90%;
 	}
 	@include respond-to (only-mobile){
+        .col-xs-4 {
+            padding: 0 4px;
+        }
 		.plan {
 			margin-top: 10px;
 			a {
+                padding: 4px 0 0;
+                border-radius: 6px;
+                width: 100%;
+                height: 150px;
+                overflow: hidden;
 				>span {
 					&:nth-of-type(2) {
-						font-size: 30px;
+						font-size: 28px;
 					}
+                    &.save {
+                        padding: 0;
+                    }
 				}
 			}
 		}
@@ -874,30 +961,66 @@ ul.pen-list {
 	}
 }
 #section-6 {
+    .col-sm-4 {
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+    h2 {
+        margin-bottom: 30px;
+    }
 	h4 {
-		line-height: 1;
+        padding-left: 50px;
+        font-size: 24px;
+        line-height: 1.75!important;
+        
 	}
+    hr {
+        &:nth-of-type(2) {
+            margin: 40px 0 0;
+        }
+    }
 	.guarantee {
 		position: relative;
-		padding-left: 38px;
-		padding-top: 20px;
+        padding: 16px;
+        border: 1px solid #d1d1d1;
+        border-radius: 6px;
+        p {
+            font-size: 16px;
+            margin-bottom: 0!important;
+        }
 		.number {
 			font-size: 25px;
 			background: $dark-gray-green;
 			color: $white;
-			width: 30px;
-			height: 30px;
-			line-height: 32px;
-			border-radius: 50%;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			border-radius: 3px;
 			text-align: center;
 			margin-right: 5px;
 			display: block;
 			position: absolute;
-			left: 0;
+			left: 16px;
 			top: 16px;
-			box-shadow: 0 3px 0 0 #FFE300;
+//			box-shadow: 0 3px 0 0 #FFE300;
 		}
 	}
+    @media only screen and (min-width: 768px) {
+        .row {
+            display: -webkit-flex;
+            display: flex;
+            .col-sm-4 {
+                display: -webkit-inline-flex;
+                display: inline-flex;
+            }
+        }
+	}
+    @media only screen and (max-width: 767px) {
+        .guarantee {
+            border: 0;
+            padding: 16px 16px 0;
+        }
+    }
 }
 #section-7 {
     background: $light-gray;
@@ -942,8 +1065,9 @@ ul.pen-list {
         font-size: 14px;
         line-height: 14px;
         color: #777;
-        padding-top: 40px;
-        border-top: 1px solid #ccc;
+//        padding-top: 40px;
+        display: inline-block;
+//        border-top: 1px solid #ccc;
     }
 	h5 {
 		font-weight: normal;
@@ -1931,6 +2055,7 @@ label[for="arrow"] {
         width: 95%;
 	}
 }
+
 @media only screen and (min-width: 1200px) {
 	.single-post .container {
 		width: 830px!important;
@@ -1947,6 +2072,11 @@ label[for="arrow"] {
 	    } 
     }
 }
+//@media only screen and (min-width: 1200px) {
+//	.container {
+//		width: 830px!important;
+//	}
+//}
 @media only screen and (min-width: 768px) {
     footer {
        .container {
