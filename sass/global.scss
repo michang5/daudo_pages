@@ -83,7 +83,7 @@ hr.page {
     background-size: contain;
 }
 .morning {
-	width: 90%;
+	width: 100%;
 	box-shadow: inset 2px 0 0 #CCCCCC;
 	margin: 0 auto;
 	padding: 0 30px;
@@ -379,7 +379,7 @@ blockquote {
 		top: 14px;
 	}
     .single-post & {
-        padding-left: 10px 30px;
+        padding: 10px 30px;
         border-left: 3px solid $yellow;
         background-color: $light-gray;
         &:before {
