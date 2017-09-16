@@ -396,6 +396,9 @@ blockquote:before {
     content: url("../images/quote_50.png");
     left: -12px;
   }
+  .single-post blockquote:before {
+    background: none !important;
+  }
 }
 
 .super {

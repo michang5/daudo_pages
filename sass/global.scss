@@ -401,6 +401,11 @@ blockquote {
 			content: url('../images/quote_50.png');
 			left: -12px;
 		}
+        .single-post & {
+            &:before {
+                background: none!important;
+            }
+        }
 	}
 }
 .super {
