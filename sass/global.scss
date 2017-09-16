@@ -383,6 +383,7 @@ blockquote {
         border-left: 3px solid $yellow;
         background-color: $light-gray;
         &:before {
+            content: none;
             background: none!important;
         }
     }
@@ -403,6 +404,7 @@ blockquote {
 		}
         .single-post & {
             &:before {
+                content: none;
                 background: none!important;
             }
         }

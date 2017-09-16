@@ -378,6 +378,7 @@ blockquote:before {
   background-color: #F5F5F5;
 }
 .single-post blockquote:before {
+  content: none;
   background: none !important;
 }
 @media only screen and (max-width: 767px) {
@@ -397,6 +398,7 @@ blockquote:before {
     left: -12px;
   }
   .single-post blockquote:before {
+    content: none;
     background: none !important;
   }
 }
